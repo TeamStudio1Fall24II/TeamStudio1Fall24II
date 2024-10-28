@@ -303,7 +303,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 918f6d88943e1ac48b41676600be0e2c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a6cbedf56f3d5644c80e136e3cfab5e5, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &84162346
 Transform:
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929897719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1603efd26a8ec11488efb0f1efeba508, type: 3}
   m_Name: 
@@ -1130,8 +1130,8 @@ MonoBehaviour:
   walkSpeed: 6
   runSpeed: 12
   jumpPower: 7
-  gravity: 10
-  lookSpeed: 2
+  gravity: 20
+  lookSpeed: 1
   lookXLimit: 45
   canMove: 1
 --- !u!143 &929897721
@@ -1290,17 +1290,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 929897719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b1d9b98eabb6d449922b0aee02666c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 7.5
-  runningSpeed: 11.5
-  jumpSpeed: 8
-  gravity: 20
-  playerCamera: {fileID: 28392910}
-  lookSpeed: 2
-  lookXLimit: 45
-  canMove: 1
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &961589810
 GameObject:
   m_ObjectHideFlags: 0
