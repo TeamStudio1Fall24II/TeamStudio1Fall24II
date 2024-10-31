@@ -9,7 +9,7 @@ public class SFXMaker : MonoBehaviour
 
     [SerializeField] bool playOnAwake = false;
 
-    private void Awake()
+    public virtual void Awake()
     {
         if (myAudioSource == null) {  myAudioSource = GetComponent<AudioSource>();}
 

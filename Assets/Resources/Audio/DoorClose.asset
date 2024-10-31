@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
-  m_Name: SFX
+  m_Name: DoorClose
   m_EditorClassIdentifier: 
   type: 6
   clips:
   - {fileID: 8300000, guid: 78a194f2cbe895244b19d57b05c03baa, type: 3}
-  baseVolume: 1
+  baseVolume: 0.744
   volumeModPercent: 0.068
   basePitch: 1
   pitchModPercent: 0.1
