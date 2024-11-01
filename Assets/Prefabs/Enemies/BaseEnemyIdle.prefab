@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 5899142994144891339}
   - component: {fileID: 6786524934496953296}
   - component: {fileID: 1359038753256390354}
+  - component: {fileID: -5138647355743793725}
   m_Layer: 0
   m_Name: BaseEnemyIdle
   m_TagString: Untagged
@@ -261,6 +262,26 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 08e90e634de2e414abba6eb405f6f131, type: 2}
   CurrentState: 0
   DefaultState: 0
+--- !u!114 &-5138647355743793725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613363942842653304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &5006703509099531600
 PrefabInstance:
   m_ObjectHideFlags: 0

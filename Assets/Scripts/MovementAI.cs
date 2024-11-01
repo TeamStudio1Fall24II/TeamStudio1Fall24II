@@ -5,6 +5,7 @@ public class MovementAI : MonoBehaviour
 {
      public GameObject target;
      public GameObject target2;
+     public GameObject currentTarget;
      private NavMeshAgent m_navMeshAgent;
 
      public bool isChasingFirst = true;
@@ -14,13 +15,15 @@ public class MovementAI : MonoBehaviour
     {
           m_navMeshAgent = GetComponent<NavMeshAgent>();
           m_navMeshAgent.SetDestination(target.transform.position);
+          currentTarget = target;
      }
 
     // Update is called once per frame
     void Update()
     {
-          if(target2 != null && m_navMeshAgent.remainingDistance <= m_navMeshAgent.stoppingDistance)
+          if(target2 != null && Vector3.Distance(transform.position, currentTarget.transform.position) < m_navMeshAgent.stoppingDistance)
           {
+               currentTarget = currentTarget == target ? target2 : target;
                isChasingFirst = !isChasingFirst;
           }
 
