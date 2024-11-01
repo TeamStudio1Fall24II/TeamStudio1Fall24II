@@ -11,6 +11,7 @@ public class FPSController : MonoBehaviour
      private InputAction jumpAction;
      private InputAction rotateAction;
      private InputAction sprintAction;
+     private InputAction fireAction;
      #endregion
 
      public Camera playerCamera;
@@ -21,9 +22,10 @@ public class FPSController : MonoBehaviour
 
      public float lookSpeed = 1f;
      public float lookXLimit = 45f;
-     private const float LOOK_SPEED_SCALAR = 0.1f;
 
      private CharacterController characterController;
+     [SerializeField]
+     private ProjectileLauncher launcher;
 
      private Vector3 moveDirection = Vector3.zero;
      private Vector3 inputDirection = Vector3.zero;
@@ -32,6 +34,8 @@ public class FPSController : MonoBehaviour
 
      [HideInInspector]
      public bool canMove = true;
+     [HideInInspector]
+     public bool canFire = true;
 
      private void Awake()
      {
@@ -52,6 +56,10 @@ public class FPSController : MonoBehaviour
 
           rotateAction = playerControls.Player.Look;
           rotateAction.Enable();
+
+          fireAction = playerControls.Player.Attack;
+          fireAction.Enable();
+          fireAction.performed += Fire;
      }
 
      private void OnDisable()
@@ -60,6 +68,7 @@ public class FPSController : MonoBehaviour
           jumpAction.Disable();
           rotateAction.Disable();
           sprintAction.Disable();
+          fireAction.Disable();
      }
 
      void Start()
@@ -111,6 +120,14 @@ public class FPSController : MonoBehaviour
           if (canMove && characterController.isGrounded)
           {
                moveDirection.y = jumpPower;
+          }
+     }
+
+     private void Fire(InputAction.CallbackContext context)
+     {
+          if(canFire)
+          {
+               launcher.Launch();
           }
      }
 
