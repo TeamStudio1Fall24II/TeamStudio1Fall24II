@@ -1,10 +1,19 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
      [SerializeField]
-     public EnemyData Data;
+     public EnemyDataSO Data;
+     public EnemyAIBehavior CurrentBehavior;
      public Scan ScanBehavior;
+     public Combat CombatBehavior;
+     private NavMeshAgent navMeshAgent;
+
+     // TODO: targets should be acquired through detection
+     // For now, just set the target in the editor.
+     public GameObject target;
+
      public enum State
      {
           Idle,
@@ -22,25 +31,22 @@ public class EnemyAI : MonoBehaviour
 
      private void Awake()
      {
-          ScanBehavior = new Scan(Data);
+          navMeshAgent = GetComponent<NavMeshAgent>();
+
+          ScanBehavior = new Scan(Data, navMeshAgent, gameObject);
+          CombatBehavior = new Combat(Data, navMeshAgent, gameObject, target);
      }
 
      private void OnEnable()
      {
           CurrentState = DefaultState;
-     }
-
-     // TODO: Eventually need to integrate animations
-     // Update is called once per frame
-     void Update()
-    {
-        switch(CurrentState)
+          switch (CurrentState)
           {
                case State.Idle:
                     // Do nothing
                     break;
                case State.Scan:
-                    ScanBehavior.ScanTick(transform);
+                    CurrentBehavior = ScanBehavior;
                     break;
                case State.Patrol:
                     break;
@@ -49,9 +55,17 @@ public class EnemyAI : MonoBehaviour
                case State.Chase:
                     break;
                case State.Combat:
+                    CurrentBehavior = CombatBehavior;
                     break;
                case State.Die:
                     break;
           }
+     }
+
+     // TODO: Eventually need to integrate animations
+     // Update is called once per frame
+     void Update()
+    {
+          CurrentBehavior.Tick();
     }
 }

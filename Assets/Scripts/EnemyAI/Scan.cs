@@ -1,10 +1,10 @@
 using UnityEngine;
-using static EnemyData;
+using UnityEngine.AI;
+using static EnemyDataSO;
 
-public class Scan
+public class Scan : EnemyAIBehavior
 {
-     private EnemyData EnemyDataSO;
-     private ScanData Data;
+     private ScanData data;
 
      private float scanPauseTimer;
      private float rotateAmount;
@@ -19,22 +19,21 @@ public class Scan
      private ScanState currentScanState { get; set; } = ScanState.ScanningLeft;
      private ScanState prevScanState;
 
-     public Scan(EnemyData initData)
+     public Scan(EnemyDataSO enemyDataSO, NavMeshAgent agent, GameObject go) : base(enemyDataSO, agent, go)
      {
-          EnemyDataSO = initData;
-          Data = EnemyDataSO.m_ScanData;
-          scanPauseTimer = Data.scanPauseLength;
+          data = enemyDataSO.m_ScanData;
+          scanPauseTimer = data.scanPauseLength;
      }
 
-     public void ScanTick(Transform transform)
+     public override void Tick()
      {
           switch (currentScanState)
           {
                case ScanState.ScanningLeft:
-                    rotateAmount = Data.scanSpeed * Time.deltaTime;
+                    rotateAmount = data.scanSpeed * Time.deltaTime;
                     totalRotation += rotateAmount;
                     transform.Rotate(Vector3.up, -rotateAmount);
-                    if (totalRotation >= Data.ScanAngle)
+                    if (totalRotation >= data.ScanAngle)
                     {
                          prevScanState = currentScanState;
                          currentScanState = ScanState.Paused;
@@ -42,10 +41,10 @@ public class Scan
                     }
                     break;
                case ScanState.ScanningRight:
-                    rotateAmount = Data.scanSpeed * Time.deltaTime;
+                    rotateAmount = data.scanSpeed * Time.deltaTime;
                     totalRotation += rotateAmount;
                     transform.Rotate(Vector3.up, rotateAmount);
-                    if (totalRotation >= Data.ScanAngle)
+                    if (totalRotation >= data.ScanAngle)
                     {
                          prevScanState = currentScanState;
                          currentScanState = ScanState.Paused;
@@ -54,7 +53,7 @@ public class Scan
                     break;
                case ScanState.Paused:
                     scanPauseTimer += Time.deltaTime;
-                    if (scanPauseTimer >= Data.scanPauseLength)
+                    if (scanPauseTimer >= data.scanPauseLength)
                     {
                          currentScanState = prevScanState == ScanState.ScanningLeft ? ScanState.ScanningRight : ScanState.ScanningLeft;
                          scanPauseTimer = 0f;
