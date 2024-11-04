@@ -24,5 +24,14 @@ public class EnemyDataSO : ScriptableObject
           public float CombatRunSpeed = 5.0f;
           public float FireCooldown = 1.0f;
           public float MaintainDistance = 8.0f;
+          public float LineOfSightDistance = 20.0f;
+
+          // Avoidance
+          public float avoidanceForce = 2f;
+          public float spreadForce = 2f;
+          public float avoidanceRadius = 2.0f;
+          public float spreadRadius = 2.0f;
+          public float PlayerAvoidanceForce = 0.5f;
+          public float PlayerAvoidanceRadius = 1.5f;
      }
 }

@@ -16,3 +16,14 @@ MonoBehaviour:
     ScanAngle: 90
     scanSpeed: 50
     scanPauseLength: 2
+  m_CombatData:
+    CombatRunSpeed: 5
+    FireCooldown: 1
+    MaintainDistance: 8
+    LineOfSightDistance: 20
+    avoidanceForce: 2
+    spreadForce: 2
+    avoidanceRadius: 2
+    spreadRadius: 2
+    PlayerAvoidanceForce: 0.5
+    PlayerAvoidanceRadius: 1.5

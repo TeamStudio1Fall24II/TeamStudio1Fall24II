@@ -20,3 +20,10 @@ MonoBehaviour:
     CombatRunSpeed: 5
     FireCooldown: 1
     MaintainDistance: 13
+    LineOfSightDistance: 20
+    avoidanceForce: 0.1
+    spreadForce: 0.1
+    avoidanceRadius: 1
+    spreadRadius: 1.5
+    PlayerAvoidanceForce: 0.1
+    PlayerAvoidanceRadius: 1.7

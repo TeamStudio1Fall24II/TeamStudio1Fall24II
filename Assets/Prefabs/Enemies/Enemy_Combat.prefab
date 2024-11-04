@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5138647355743793725, guid: 1444c9284d02efc4db6f939d1a8418dc, type: 3}
+      propertyPath: m_IgnoreFromBuild
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 613363942842653304, guid: 1444c9284d02efc4db6f939d1a8418dc, type: 3}
       propertyPath: m_Name
       value: Enemy_Combat
@@ -25,8 +29,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6786524934496953296, guid: 1444c9284d02efc4db6f939d1a8418dc, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 8
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786524934496953296, guid: 1444c9284d02efc4db6f939d1a8418dc, type: 3}
+      propertyPath: avoidancePriority
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7523774738138989197, guid: 1444c9284d02efc4db6f939d1a8418dc, type: 3}
       propertyPath: m_LocalPosition.x
