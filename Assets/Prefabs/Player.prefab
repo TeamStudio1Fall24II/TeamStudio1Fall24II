@@ -358,6 +358,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8058076806331499888}
     m_Modifications:
+    - target: {fileID: 708112887326464972, guid: daf9a3cb8a2f7374498ff4e0aabb240a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5086615211974756124, guid: daf9a3cb8a2f7374498ff4e0aabb240a, type: 3}
       propertyPath: m_Name
       value: Weapon
@@ -400,6 +404,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7070548318208500201, guid: daf9a3cb8a2f7374498ff4e0aabb240a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488229893056344572, guid: daf9a3cb8a2f7374498ff4e0aabb240a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034849264005370309, guid: daf9a3cb8a2f7374498ff4e0aabb240a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
