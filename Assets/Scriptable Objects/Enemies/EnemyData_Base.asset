@@ -14,16 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ScanData:
     ScanAngle: 90
-    scanSpeed: 50
-    scanPauseLength: 2
+    ScanSpeed: 11.25
+    ScanPauseLength: 2
   m_CombatData:
     CombatRunSpeed: 5
     FireCooldown: 1
     MaintainDistance: 8
     LineOfSightDistance: 20
-    avoidanceForce: 2
-    spreadForce: 2
-    avoidanceRadius: 2
-    spreadRadius: 2
+    AvoidanceForce: 2
+    SpreadForce: 2
+    AvoidanceRadius: 2
+    SpreadRadius: 2
     PlayerAvoidanceForce: 0.5
     PlayerAvoidanceRadius: 1.5
+  m_FOVData:
+    FieldOfViewAngle: 110
+    ViewDistance: 10
+    RaycastTime: 0.2

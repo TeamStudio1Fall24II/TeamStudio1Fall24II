@@ -22,7 +22,7 @@ public class Scan : EnemyAIBehavior
      public Scan(EnemyDataSO enemyDataSO, NavMeshAgent agent, GameObject go) : base(enemyDataSO, agent, go)
      {
           data = enemyDataSO.m_ScanData;
-          scanPauseTimer = data.scanPauseLength;
+          scanPauseTimer = data.ScanPauseLength;
      }
 
      public override void Tick()
@@ -30,7 +30,7 @@ public class Scan : EnemyAIBehavior
           switch (currentScanState)
           {
                case ScanState.ScanningLeft:
-                    rotateAmount = data.scanSpeed * Time.deltaTime;
+                    rotateAmount = data.ScanSpeed * Time.deltaTime;
                     totalRotation += rotateAmount;
                     transform.Rotate(Vector3.up, -rotateAmount);
                     if (totalRotation >= data.ScanAngle)
@@ -41,7 +41,7 @@ public class Scan : EnemyAIBehavior
                     }
                     break;
                case ScanState.ScanningRight:
-                    rotateAmount = data.scanSpeed * Time.deltaTime;
+                    rotateAmount = data.ScanSpeed * Time.deltaTime;
                     totalRotation += rotateAmount;
                     transform.Rotate(Vector3.up, rotateAmount);
                     if (totalRotation >= data.ScanAngle)
@@ -53,7 +53,7 @@ public class Scan : EnemyAIBehavior
                     break;
                case ScanState.Paused:
                     scanPauseTimer += Time.deltaTime;
-                    if (scanPauseTimer >= data.scanPauseLength)
+                    if (scanPauseTimer >= data.ScanPauseLength)
                     {
                          currentScanState = prevScanState == ScanState.ScanningLeft ? ScanState.ScanningRight : ScanState.ScanningLeft;
                          scanPauseTimer = 0f;

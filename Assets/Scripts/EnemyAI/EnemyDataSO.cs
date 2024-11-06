@@ -9,13 +9,15 @@ public class EnemyDataSO : ScriptableObject
      public ScanData m_ScanData;
      [SerializeField]
      public CombatData m_CombatData;
+     [SerializeField]
+     public FOVData m_FOVData;
 
      [Serializable]
      public class ScanData
      {
           public float ScanAngle = 45f;
-          public float scanSpeed = 1f;
-          public float scanPauseLength = 2f;
+          public float ScanSpeed = 1f;
+          public float ScanPauseLength = 2f;
      }
 
      [Serializable]
@@ -27,11 +29,19 @@ public class EnemyDataSO : ScriptableObject
           public float LineOfSightDistance = 20.0f;
 
           // Avoidance
-          public float avoidanceForce = 2f;
-          public float spreadForce = 2f;
-          public float avoidanceRadius = 2.0f;
-          public float spreadRadius = 2.0f;
+          public float AvoidanceForce = 2f;
+          public float SpreadForce = 2f;
+          public float AvoidanceRadius = 2.0f;
+          public float SpreadRadius = 2.0f;
           public float PlayerAvoidanceForce = 0.5f;
           public float PlayerAvoidanceRadius = 1.5f;
+     }
+
+     [Serializable]
+     public class FOVData
+     {
+          public float FieldOfViewAngle = 110f;
+          public float ViewDistance = 10f;
+          public float RaycastTime = 0.2f;
      }
 }

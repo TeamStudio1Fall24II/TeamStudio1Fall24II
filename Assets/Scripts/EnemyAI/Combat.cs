@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using UnityEngine.Rendering;
 using static EnemyDataSO;
 
+// TODO: feature to be able to lose target and go back to a scan/patrol state
 public class Combat : EnemyAIBehavior
 {
      public GameObject Target;
@@ -58,7 +59,7 @@ public class Combat : EnemyAIBehavior
      private void Avoidance()
      {
           // Avoidance
-          Collider[] colliders = Physics.OverlapSphere(transform.position, data.avoidanceRadius);
+          Collider[] colliders = Physics.OverlapSphere(transform.position, data.AvoidanceRadius);
           foreach (Collider collider in colliders)
           {
                if (collider.gameObject != enemyGO)
@@ -67,7 +68,7 @@ public class Combat : EnemyAIBehavior
                     if (otherAgent != null)
                     {
                          Vector3 directionAway = (transform.position - otherAgent.transform.position).normalized;
-                         navMeshAgent.velocity += directionAway * data.avoidanceForce;
+                         navMeshAgent.velocity += directionAway * data.AvoidanceForce;
                     }
                }
           }
@@ -76,13 +77,13 @@ public class Combat : EnemyAIBehavior
      private void Spreading()
      {
           // Spreading
-          Collider[] obstructingColliders = Physics.OverlapSphere(transform.position, data.spreadRadius);
+          Collider[] obstructingColliders = Physics.OverlapSphere(transform.position, data.SpreadRadius);
           foreach (Collider collider in obstructingColliders)
           {
                if (collider.gameObject != enemyGO && collider.CompareTag("EnemyAI"))
                {
                     Vector3 spreadDirection = (transform.position - collider.transform.position).normalized;
-                    navMeshAgent.velocity += spreadDirection * data.spreadForce;
+                    navMeshAgent.velocity += spreadDirection * data.SpreadForce;
                }
           }
      }
