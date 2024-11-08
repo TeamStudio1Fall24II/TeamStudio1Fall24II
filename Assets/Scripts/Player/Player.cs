@@ -44,6 +44,7 @@ public class Player : MonoBehaviour, IDamageable
           {
                stamRecharge = StartCoroutine(RechargeStamina());
           }
+          m_Controller.canSprint = currentStam > 0;
      }
 
      public void TakeDamage(int damage)
