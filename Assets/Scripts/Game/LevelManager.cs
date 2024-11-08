@@ -11,13 +11,12 @@ public class LevelManager : MonoBehaviour
 
      public InteractableDoor LevelDoor;
 
-     // Need a zone/collider that player enters.
-     // On trigger enter, trigger event that player entered zone
-     // Level Manager listens to that event to trigger Level completed event
-     // game manager listens to level completed event to start level transition
+     public CompletionZone LevelCompletionZone;
 
      private void Awake()
-     { 
+     {
+          LevelCompletionZone.PlayerEnteredCompletionZone += OnCompletionZone;
+
           foreach(GameObject enemyGO in Enemies)
           {
                enemyGO.GetComponent<EnemyAI>().DeathEvent += RemoveEnemy;
@@ -41,5 +40,11 @@ public class LevelManager : MonoBehaviour
                     LevelDoor.isLocked = false;
                }
           }
+     }
+
+     private void OnCompletionZone()
+     {
+          Debug.Log("Level Complete!");
+          LevelCompleteEvent?.Invoke(this);
      }
 }
