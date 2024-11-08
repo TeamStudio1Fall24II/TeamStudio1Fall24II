@@ -8,7 +8,10 @@ public class Player : MonoBehaviour, IDamageable
      public PlayerData m_PlayerData;
      public int currentHealth { get; private set; }
      public float currentStam { get; private set; }
-     public bool running => m_Controller.isRunning;
+     
+     private Vector3 prevPos = Vector3.zero;
+     private Vector3 currPos = Vector3.zero;
+     public bool running => m_Controller.isRunning && prevPos != currPos;
 
      private Coroutine stamRecharge;
      private Coroutine healthRecharge;
@@ -31,6 +34,8 @@ public class Player : MonoBehaviour, IDamageable
 
      private void Update()
      {
+          currPos = transform.position;
+
           if (running)
           {
                currentStam -= m_PlayerData.RunCost * Time.deltaTime;
@@ -45,6 +50,8 @@ public class Player : MonoBehaviour, IDamageable
                stamRecharge = StartCoroutine(RechargeStamina());
           }
           m_Controller.canSprint = currentStam > 0;
+
+          prevPos = currPos;
      }
 
      public void TakeDamage(int damage)
