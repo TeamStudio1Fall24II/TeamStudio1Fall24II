@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-public class Level : MonoBehaviour
+public class LevelManager : MonoBehaviour
 { 
      public List<GameObject> Enemies = new List<GameObject>();
      public int EnemyCount => Enemies.Count;
      public bool isEnemiesCleared => EnemyCount == 0;
-     public UnityAction<Level> LevelCompleteEvent;
+     public UnityAction<LevelManager> LevelCompleteEvent;
+
+     public InteractableDoor LevelDoor;
 
      // Need a zone/collider that player enters.
      // On trigger enter, trigger event that player entered zone
@@ -36,7 +38,7 @@ public class Level : MonoBehaviour
                Enemies.Remove(enemy);
                if (isEnemiesCleared)
                {
-                    // Tell the elevator to unlock
+                    LevelDoor.isLocked = false;
                }
           }
      }

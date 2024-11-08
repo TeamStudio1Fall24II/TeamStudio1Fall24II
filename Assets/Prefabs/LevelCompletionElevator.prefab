@@ -49,7 +49,7 @@ MonoBehaviour:
   DefaultMat: {fileID: 0}
   HighlightMat: {fileID: 2100000, guid: a95b87ef41b246b4fb78602bed46bfb1, type: 2}
   HighlightedObject: {fileID: 8281814288715533789}
-  isLocked: 0
+  isLocked: 1
   animator: {fileID: 8672394375497729769}
 --- !u!65 &6108406473338627944
 BoxCollider:

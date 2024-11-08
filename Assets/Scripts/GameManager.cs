@@ -5,9 +5,9 @@ public class GameManager : MonoBehaviour
 {
      public static GameManager Instance;
 
-     public List<Level> Levels = new List<Level>();
+     public List<LevelManager> Levels = new List<LevelManager>();
 
-     [SerializeField] private Level currentLevel;
+     [SerializeField] private LevelManager currentLevel;
 
      private void Awake()
      {
@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
 
      private void Start()
      {
-          foreach(Level level in Levels)
+          foreach(LevelManager level in Levels)
           {
                level.LevelCompleteEvent += OnLevelComplete;
           }
      }
 
-     private void OnLevelComplete(Level level)
+     private void OnLevelComplete(LevelManager level)
      {
           Debug.Log("Level Complete!");
      }
