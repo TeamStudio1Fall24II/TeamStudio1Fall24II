@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8522882842573840804}
+  - component: {fileID: -8066872266502158414}
+  - component: {fileID: 4199983146858376009}
   - component: {fileID: 1974519802403399055}
   - component: {fileID: -8645783926464757658}
-  - component: {fileID: 4199983146858376009}
   - component: {fileID: 5183148260187827790}
   - component: {fileID: 7072631079198258128}
   m_Layer: 0
@@ -38,6 +39,41 @@ Transform:
   - {fileID: 8058076806331499888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8066872266502158414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137803983489276469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a850f37f8ab482049a11571d695ec36f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerData: {fileID: 11400000, guid: f622d1f7a6e45a34aa005551275bfa75, type: 2}
+--- !u!114 &4199983146858376009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137803983489276469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1603efd26a8ec11488efb0f1efeba508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 6968219251744137449}
+  walkSpeed: 6
+  runSpeed: 12
+  jumpPower: 7
+  gravity: 20
+  lookSpeed: 1
+  lookXLimit: 60.2
+  launcher: {fileID: 807248726370282032}
+  canMove: 1
+  canFire: 1
 --- !u!143 &1974519802403399055
 CharacterController:
   m_ObjectHideFlags: 0
@@ -86,28 +122,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: -0.02, z: 0}
---- !u!114 &4199983146858376009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4137803983489276469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1603efd26a8ec11488efb0f1efeba508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 6968219251744137449}
-  walkSpeed: 6
-  runSpeed: 12
-  jumpPower: 7
-  gravity: 20
-  lookSpeed: 1
-  lookXLimit: 60.2
-  launcher: {fileID: 807248726370282032}
-  canMove: 1
-  canFire: 1
 --- !u!114 &5183148260187827790
 MonoBehaviour:
   m_ObjectHideFlags: 0

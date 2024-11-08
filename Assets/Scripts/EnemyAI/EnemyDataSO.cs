@@ -11,6 +11,8 @@ public class EnemyDataSO : ScriptableObject
      public CombatData m_CombatData;
      [SerializeField]
      public FOVData m_FOVData;
+     [SerializeField]
+     public HealthData m_HealthData;
 
      [Serializable]
      public class ScanData
@@ -43,5 +45,11 @@ public class EnemyDataSO : ScriptableObject
           public float FieldOfViewAngle = 110f;
           public float ViewDistance = 10f;
           public float RaycastTime = 0.2f;
+     }
+
+     [Serializable]
+     public class HealthData
+     {
+          public int MaxHealth = 5;
      }
 }

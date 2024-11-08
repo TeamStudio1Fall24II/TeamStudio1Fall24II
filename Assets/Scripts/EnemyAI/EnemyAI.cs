@@ -1,7 +1,8 @@
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour, IDamageable
 {
      [SerializeField]
      public EnemyDataSO Data;
@@ -14,6 +15,8 @@ public class EnemyAI : MonoBehaviour
 
      private GameObject Target;
      private bool isPlayerDetected = false;
+
+     private int currentHealth;
 
      public enum State
      {
@@ -39,7 +42,7 @@ public class EnemyAI : MonoBehaviour
           ScanBehavior = new Scan(Data, navMeshAgent, gameObject);
           CombatBehavior = new Combat(Data, navMeshAgent, gameObject, Target);
 
-
+          currentHealth = Data.m_HealthData.MaxHealth;
      }
 
      private void OnEnable()
@@ -107,6 +110,19 @@ public class EnemyAI : MonoBehaviour
                }
           }
      }
+
+     public void TakeDamage(int damage)
+     {
+          Debug.Log("I've been hit! " + damage + " Damage");
+          currentHealth -= damage;
+          if (currentHealth <= 0)
+          {
+               // TODO: implement death
+               Debug.Log("Enemy has 0 health. They should be dead");
+               currentHealth = Data.m_HealthData.MaxHealth;
+          }
+     }
+
 }
 
 
