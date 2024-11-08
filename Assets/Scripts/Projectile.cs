@@ -26,16 +26,16 @@ public class Projectile : MonoBehaviour
      {
           // if not live, don't do anything
           if(!isLive) { return; }
+          isLive = false;
           // do damage
           IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
           if(damageable != null)
           {
-               isLive = false;
                damageable.TakeDamage(Damage);
-               // Slow momentum
-               GetComponent<Rigidbody>().linearVelocity *= 0.5f;
-               // set short life timer after collision.
-               TimeToLive = 2.0f;
           }
+          // Slow momentum
+          GetComponent<Rigidbody>().linearVelocity *= 0.5f;
+          // set short life timer after collision.
+          TimeToLive = 2.0f;
      }
 }
