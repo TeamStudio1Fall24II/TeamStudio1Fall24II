@@ -13,6 +13,7 @@ public class FPSController : MonoBehaviour
      private InputAction sprintAction;
      private InputAction fireAction;
      private InputAction interactAction;
+     private InputAction reloadAction;
      #endregion
 
      public Camera playerCamera;
@@ -69,6 +70,10 @@ public class FPSController : MonoBehaviour
           interactAction = playerControls.Player.Interact;
           interactAction.Enable();
           interactAction.performed += Interact;
+
+          reloadAction = playerControls.Player.Reload;
+          reloadAction.Enable();
+          reloadAction.performed += Reload;
      }
 
      private void OnDisable()
@@ -79,6 +84,7 @@ public class FPSController : MonoBehaviour
           sprintAction.Disable();
           fireAction.Disable();
           interactAction.Disable();
+          reloadAction.Disable();
      }
 
      void Start()
@@ -144,6 +150,11 @@ public class FPSController : MonoBehaviour
      private void Interact(InputAction.CallbackContext context)
      {
           interactionProbe.Interact();
+     }
+
+     private void Reload(InputAction.CallbackContext context)
+     {
+          launcher.StartReloadIterative();
      }
 
      private void GravityTick()

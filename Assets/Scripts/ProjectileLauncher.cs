@@ -35,27 +35,42 @@ public class ProjectileLauncher : MonoBehaviour
           AmmoChangeEvent?.Invoke();
           if(CurrentAmmo == 0)
           {
-               canFire = false;
                StartCoroutine(ReloadIterative());
           }
      }
+     public void StartReload()
+     {
+          StartCoroutine(Reload());
+     }
+     public void StartReloadIterative()
+     {
+          StartCoroutine(ReloadIterative());
+     }
+
      // TODO: Need some visual indication of reload
      IEnumerator ReloadIterative()
      {
-          while(CurrentAmmo < MaxAmmo)
+          if (CurrentAmmo != MaxAmmo)
           {
-               yield return new WaitForSeconds(reloadTimePerBullet);
-               CurrentAmmo += 1;
-               AmmoChangeEvent?.Invoke();
+               canFire = false;
+               while (CurrentAmmo < MaxAmmo)
+               {
+                    yield return new WaitForSeconds(reloadTimePerBullet);
+                    CurrentAmmo += 1;
+                    AmmoChangeEvent?.Invoke();
+               }
+               canFire = true;
           }
-          canFire = true;
      }
 
      IEnumerator Reload()
      {
-          yield return new WaitForSeconds(reloadTime);
-          CurrentAmmo = 12;
-          AmmoChangeEvent?.Invoke();
-          canFire = true;
+          if (CurrentAmmo != MaxAmmo)
+          {
+               yield return new WaitForSeconds(reloadTime);
+               CurrentAmmo = MaxAmmo;
+               AmmoChangeEvent?.Invoke();
+               canFire = true;
+          }
      }
 }
