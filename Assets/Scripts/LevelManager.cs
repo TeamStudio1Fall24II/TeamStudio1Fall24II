@@ -7,8 +7,12 @@ public class Level : MonoBehaviour
      public List<GameObject> Enemies = new List<GameObject>();
      public int EnemyCount => Enemies.Count;
      public bool isEnemiesCleared => EnemyCount == 0;
-     public UnityAction LevelCompleteEvent;
+     public UnityAction<Level> LevelCompleteEvent;
 
+     // Need a zone/collider that player enters.
+     // On trigger enter, trigger event that player entered zone
+     // Level Manager listens to that event to trigger Level completed event
+     // game manager listens to level completed event to start level transition
 
      private void Awake()
      { 
@@ -30,9 +34,9 @@ public class Level : MonoBehaviour
           if(Enemies.Contains(enemy))
           {
                Enemies.Remove(enemy);
-               if(isEnemiesCleared)
+               if (isEnemiesCleared)
                {
-                    LevelCompleteEvent?.Invoke();
+                    // Tell the elevator to unlock
                }
           }
      }

@@ -147,6 +147,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
 
      public IEnumerator DeathSequence()
      {
+          // TODO: integrate animations. 
           navMeshAgent.enabled = false;
           float elapsedTime = 0f;
           Vector3 startPosition = transform.position;

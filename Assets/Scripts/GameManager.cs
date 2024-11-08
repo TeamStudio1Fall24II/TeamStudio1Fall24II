@@ -21,4 +21,17 @@ public class GameManager : MonoBehaviour
           DontDestroyOnLoad(gameObject);
 
      }
+
+     private void Start()
+     {
+          foreach(Level level in Levels)
+          {
+               level.LevelCompleteEvent += OnLevelComplete;
+          }
+     }
+
+     private void OnLevelComplete(Level level)
+     {
+          Debug.Log("Level Complete!");
+     }
 }
