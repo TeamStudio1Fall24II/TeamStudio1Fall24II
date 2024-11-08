@@ -14,12 +14,6 @@ public class AmmoDisplay : MonoBehaviour
     public float reloadTime = 2.5f;
     public TextMeshProUGUI ammoDisplay;
     
-    
-
-    void Start() 
-    {
-        
-    }
 
     void Update()
     {

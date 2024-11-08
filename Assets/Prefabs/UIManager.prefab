@@ -48,6 +48,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   healthBar: {fileID: 8185318007356225428}
   StamFill: {fileID: 7601716409217624799}
+  ammoDisplay: {fileID: 1869998223773763366}
 --- !u!1001 &4414981255731781641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +154,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa34d3e0da01f544a3c440fdd5abfde, type: 3}
+--- !u!114 &1869998223773763366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2645507944178984751, guid: cfa34d3e0da01f544a3c440fdd5abfde, type: 3}
+  m_PrefabInstance: {fileID: 4414981255731781641}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6759827446770563964 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6956532210146433909, guid: cfa34d3e0da01f544a3c440fdd5abfde, type: 3}

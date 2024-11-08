@@ -1,7 +1,7 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
      public HealthBar healthBar;
      public Image StamFill;
+     public TextMeshProUGUI ammoDisplay;
 
      private void Awake()
      {
@@ -20,10 +21,13 @@ public class UIManager : MonoBehaviour
      {
           Player.PlayerHealthChangeEvent -= OnPlayerHealthChange;
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
+          Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
      }
 
      private void Start()
      {
+          // Needs to wait for Player to initialize its controller
+          Player.m_Controller.launcher.AmmoChangeEvent += OnAmmoChange; 
           healthBar.SetMaxHealth(Player.m_PlayerData.MaxHealth);
      }
 
@@ -34,5 +38,10 @@ public class UIManager : MonoBehaviour
      private void OnPlayerStaminaChange()
      {
           StamFill.fillAmount = Player.currentStam / Player.m_PlayerData.maxStam;
+     }
+
+     private void OnAmmoChange() 
+     {
+          ammoDisplay.text = Player.m_Controller.launcher.CurrentAmmo.ToString();
      }
 }

@@ -27,8 +27,7 @@ public class FPSController : MonoBehaviour
      public bool isRunning;
 
      private CharacterController characterController;
-     [SerializeField]
-     private ProjectileLauncher launcher;
+     public ProjectileLauncher launcher;
      [SerializeField]
      private InteractionProbe interactionProbe;
 
