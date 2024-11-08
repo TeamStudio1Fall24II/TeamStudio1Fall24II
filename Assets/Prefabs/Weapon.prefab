@@ -269,6 +269,8 @@ MonoBehaviour:
   ProjectileSpawnPoint: {fileID: 2624755221701335437}
   ProjectileSpeed: 30
   ProjectileSpawnDistance: 0.2
+  MaxAmmo: 12
+  canFire: 1
 --- !u!1001 &3256027193222331560
 PrefabInstance:
   m_ObjectHideFlags: 0

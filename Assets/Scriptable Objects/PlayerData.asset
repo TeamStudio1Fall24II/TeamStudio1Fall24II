@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   MaxHealth: 10
+  maxStam: 100
+  RunCost: 10
+  StamChargeRate: 1
+  HealthChargeRate: 1

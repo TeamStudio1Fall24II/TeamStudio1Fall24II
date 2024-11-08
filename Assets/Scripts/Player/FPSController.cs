@@ -24,9 +24,10 @@ public class FPSController : MonoBehaviour
      public float lookSpeed = 1f;
      public float lookXLimit = 45f;
 
+     public bool isRunning;
+
      private CharacterController characterController;
-     [SerializeField]
-     private ProjectileLauncher launcher;
+     public ProjectileLauncher launcher;
      [SerializeField]
      private InteractionProbe interactionProbe;
 
@@ -39,6 +40,7 @@ public class FPSController : MonoBehaviour
      public bool canMove = true;
      [HideInInspector]
      public bool canFire = true;
+     public bool canSprint = true;
 
      private void Awake()
      {
@@ -99,9 +101,9 @@ public class FPSController : MonoBehaviour
           Vector3 forward = transform.TransformDirection(Vector3.forward);
           Vector3 right = transform.TransformDirection(Vector3.right);
 
-          bool isRunning = sprintAction.IsPressed();
-          float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.y : 0;
-          float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.x : 0;
+          isRunning = sprintAction.IsPressed();
+          float curSpeedX = canMove ? (isRunning && canSprint ? runSpeed : walkSpeed) * inputDirection.y : 0;
+          float curSpeedY = canMove ? (isRunning && canSprint ? runSpeed : walkSpeed) * inputDirection.x : 0;
           float movementDirectionY = moveDirection.y;
           moveDirection = (forward * curSpeedX) + (right * curSpeedY);
           moveDirection.y = movementDirectionY;
