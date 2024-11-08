@@ -12,6 +12,7 @@ public class FPSController : MonoBehaviour
      private InputAction rotateAction;
      private InputAction sprintAction;
      private InputAction fireAction;
+     private InputAction interactAction;
      #endregion
 
      public Camera playerCamera;
@@ -26,6 +27,8 @@ public class FPSController : MonoBehaviour
      private CharacterController characterController;
      [SerializeField]
      private ProjectileLauncher launcher;
+     [SerializeField]
+     private InteractionProbe interactionProbe;
 
      private Vector3 moveDirection = Vector3.zero;
      private Vector3 inputDirection = Vector3.zero;
@@ -60,6 +63,10 @@ public class FPSController : MonoBehaviour
           fireAction = playerControls.Player.Attack;
           fireAction.Enable();
           fireAction.performed += Fire;
+
+          interactAction = playerControls.Player.Interact;
+          interactAction.Enable();
+          interactAction.performed += Interact;
      }
 
      private void OnDisable()
@@ -69,6 +76,7 @@ public class FPSController : MonoBehaviour
           rotateAction.Disable();
           sprintAction.Disable();
           fireAction.Disable();
+          interactAction.Disable();
      }
 
      void Start()
@@ -129,6 +137,11 @@ public class FPSController : MonoBehaviour
           {
                launcher.Launch();
           }
+     }
+
+     private void Interact(InputAction.CallbackContext context)
+     {
+          interactionProbe.Interact();
      }
 
      private void GravityTick()

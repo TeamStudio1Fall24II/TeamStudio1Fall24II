@@ -22,6 +22,7 @@ public class Projectile : MonoBehaviour
           }
     }
 
+     // TODO: player can shoot themself in the belly
      private void OnCollisionEnter(Collision other)
      {
           // if not live, don't do anything

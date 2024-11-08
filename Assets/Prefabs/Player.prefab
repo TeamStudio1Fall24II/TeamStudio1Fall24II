@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8522882842573840804}
   - component: {fileID: -8066872266502158414}
   - component: {fileID: 4199983146858376009}
+  - component: {fileID: 4903962102770674811}
   - component: {fileID: 1974519802403399055}
   - component: {fileID: -8645783926464757658}
   - component: {fileID: 5183148260187827790}
@@ -72,8 +73,27 @@ MonoBehaviour:
   lookSpeed: 1
   lookXLimit: 60.2
   launcher: {fileID: 807248726370282032}
+  interactionProbe: {fileID: 4903962102770674811}
   canMove: 1
   canFire: 1
+--- !u!114 &4903962102770674811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137803983489276469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8587281979afa49beff446fe02c1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 6968219251744137449}
+  RaycastInterval: 0.1
+  lookDistance: 2
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!143 &1974519802403399055
 CharacterController:
   m_ObjectHideFlags: 0
