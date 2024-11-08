@@ -139,7 +139,13 @@ public class EnemyAI : MonoBehaviour, IDamageable
           {
                DeathEvent?.Invoke(gameObject);
                TransitionToDeath();
+               return;
           }
+          if(CurrentState != State.Combat)
+          {
+               TransitionToCombat();
+          }
+
      }
 
      public float rotationAngle = 90f;
