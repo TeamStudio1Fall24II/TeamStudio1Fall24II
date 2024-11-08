@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerHUD : MonoBehaviour
 {
 
 	public int maxHealth;
@@ -19,9 +17,9 @@ public class Player : MonoBehaviour
 
 	public float RunCost;
 	public float StamChargeRate;
-    public int HealthChargeRate;
+     public int HealthChargeRate;
 
-    private Coroutine stamRecharge;
+     private Coroutine stamRecharge;
 	private Coroutine healthRecharge;
 
      //Start is called before the first frame update
@@ -60,7 +58,7 @@ public class Player : MonoBehaviour
 			if(stamRecharge != null) StopCoroutine(stamRecharge);
 			stamRecharge = StartCoroutine(RechargeStamina());
 
-        }
+		}
     }
 
 	void TakeDamage(int damage)

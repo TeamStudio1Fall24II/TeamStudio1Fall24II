@@ -5,5 +5,9 @@ using UnityEngine;
 [Serializable]
 public class PlayerData : ScriptableObject
 {
-     public int MaxHealth = 10;
+     public int MaxHealth = 100;
+     public float maxStam = 100;
+     public float RunCost = 1;
+     public float StamChargeRate = 1;
+     public int HealthChargeRate = 1;
 }
