@@ -3,7 +3,12 @@ guid: c8bc58b70467a8e4a9e8e7b9b0274d1f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cubicle
+    second: {fileID: 2100000, guid: f92494d30cc61a6418f44dd562f8c0d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
