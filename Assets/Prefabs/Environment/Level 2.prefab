@@ -4426,6 +4426,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 924a58ed8e17c4045b670fba24abc92d, type: 2}
+    - target: {fileID: 9130045559724100694, guid: bfd1470e29be4ed4dbad63bf171892fb, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 156950376977617635, guid: bfd1470e29be4ed4dbad63bf171892fb, type: 3}
