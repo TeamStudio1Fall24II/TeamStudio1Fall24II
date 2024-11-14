@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
      public CompletionZone LevelCompletionZone;
      public Transform StartPoint;
 
+     public float UnlockStartDoorDelay = 1.0f;
+
      private void Awake()
      {
           LevelCompletionZone.PlayerEnteredCompletionZone += OnCompletionZone;
@@ -62,12 +64,12 @@ public class LevelManager : MonoBehaviour
           player.GetComponent<CharacterController>().enabled = false;
           player.transform.position = StartPoint.position;
           player.GetComponent<CharacterController>().enabled = true;
-          StartCoroutine(SlowUnlockDoor());
+          StartCoroutine(SlowUnlockDoor(UnlockStartDoorDelay));
      }
 
-     private IEnumerator SlowUnlockDoor()
+     private IEnumerator SlowUnlockDoor(float seconds)
      {
-          yield return new WaitForSeconds(5.0f);
+          yield return new WaitForSeconds(seconds);
           LevelStartDoor.isLocked = false;
      }
 }
