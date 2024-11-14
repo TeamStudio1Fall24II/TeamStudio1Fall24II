@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
           Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
           Player.m_Controller.StartPressed -= OnStartPressed;
-          GameManager.VictoryEvent += OnVictory;
+          GameManager.VictoryEvent -= OnVictory;
     }
 
      private void Start()
