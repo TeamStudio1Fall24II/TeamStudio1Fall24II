@@ -20,6 +20,7 @@ public class Player : MonoBehaviour, IDamageable
      public UnityAction PlayerHealthChangeEvent;
      public UnityAction PlayerStaminaChangeEvent;
      public UnityAction PlayerDeathEvent;
+     public UnityAction VictoryEvent;
 
 
      private void Awake()

@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
      public TextMeshProUGUI ammoDisplay;
      public PauseMenu pauseMenu;
      public DeathMenu deathMenu;
+     public VictoryMenu victoryMenu;
 
      public bool isPaused = false;
 
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour
           Player.PlayerDeathEvent += OnPlayerDeath;
           Player.PlayerStaminaChangeEvent += OnPlayerStaminaChange;
           Player.m_Controller.StartPressed += OnStartPressed;
+          Player.VictoryEvent += OnVictory;
      }
 
      private void OnDisable()
@@ -29,7 +31,8 @@ public class UIManager : MonoBehaviour
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
           Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
           Player.m_Controller.StartPressed -= OnStartPressed;
-     }
+          Player.VictoryEvent += OnVictory;
+    }
 
      private void Start()
      {
@@ -61,4 +64,9 @@ public class UIManager : MonoBehaviour
      {
           deathMenu.OpenDeathMenu();
      }
+
+    private void OnVictory()
+    {
+        victoryMenu.OpenVictoryMenu();
+    }
 }
