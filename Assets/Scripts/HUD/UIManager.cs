@@ -1,28 +1,39 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
      public Player Player;
+     public GameManager GameManager;
 
      public HealthBar healthBar;
      public Image StamFill;
      public TextMeshProUGUI ammoDisplay;
+     public PauseMenu pauseMenu;
+     public DeathMenu deathMenu;
+     public VictoryMenu victoryMenu;
+
+     public bool isPaused = false;
 
      private void Awake()
      {
           Player.PlayerHealthChangeEvent += OnPlayerHealthChange;
+          Player.PlayerDeathEvent += OnPlayerDeath;
           Player.PlayerStaminaChangeEvent += OnPlayerStaminaChange;
+          Player.m_Controller.StartPressed += OnStartPressed;
+          GameManager.VictoryEvent += OnVictory;
      }
 
      private void OnDisable()
      {
           Player.PlayerHealthChangeEvent -= OnPlayerHealthChange;
+          Player.PlayerDeathEvent -= OnPlayerDeath;
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
           Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
-     }
+          Player.m_Controller.StartPressed -= OnStartPressed;
+          GameManager.VictoryEvent -= OnVictory;
+    }
 
      private void Start()
      {
@@ -44,4 +55,19 @@ public class UIManager : MonoBehaviour
      {
           ammoDisplay.text = Player.m_Controller.launcher.CurrentAmmo.ToString();
      }
+
+     private void OnStartPressed()
+     {
+          pauseMenu.TogglePause();
+     }
+
+     private void OnPlayerDeath()
+     {
+          deathMenu.OpenDeathMenu();
+     }
+
+    private void OnVictory()
+    {
+        victoryMenu.OpenVictoryMenu();
+    }
 }

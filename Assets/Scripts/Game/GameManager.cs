@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
@@ -12,7 +13,9 @@ public class GameManager : MonoBehaviour
      [SerializeField] private LevelManager currentLevel;
      private int currentLevelIndex = 0;
 
-     private void Awake()
+    public UnityAction VictoryEvent;
+
+    private void Awake()
      {
           if (Instance != null && Instance != this)
           {
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
           }
 
           Instance = this;
-          DontDestroyOnLoad(gameObject);
+          //DontDestroyOnLoad(gameObject);
 
      }
 
@@ -42,8 +45,10 @@ public class GameManager : MonoBehaviour
           }
           if(Levels.Count == 0)
           {
+               
                Debug.Log("Game Finished!!!");
-               // End game Sequence
+               VictoryEvent.Invoke();
+               //End game Sequence
                return;
           }
           // Level start sequence/ transition

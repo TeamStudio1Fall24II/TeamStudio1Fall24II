@@ -31,3 +31,5 @@ MonoBehaviour:
     FieldOfViewAngle: 110
     ViewDistance: 10
     RaycastTime: 0.2
+  m_HealthData:
+    MaxHealth: 50

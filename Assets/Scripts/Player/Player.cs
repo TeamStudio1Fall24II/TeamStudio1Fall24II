@@ -19,6 +19,8 @@ public class Player : MonoBehaviour, IDamageable
 
      public UnityAction PlayerHealthChangeEvent;
      public UnityAction PlayerStaminaChangeEvent;
+     public UnityAction PlayerDeathEvent;
+     
 
 
      private void Awake()
@@ -61,9 +63,7 @@ public class Player : MonoBehaviour, IDamageable
           PlayerHealthChangeEvent.Invoke();
           if(currentHealth <= 0)
           {
-               // TODO: implement death
-               Debug.Log("0 health. I should be dead");
-               currentHealth = m_PlayerData.MaxHealth;
+               PlayerDeathEvent?.Invoke();
           }
           if (healthRecharge != null) StopCoroutine(healthRecharge);
           healthRecharge = StartCoroutine(RechargeHealth());
