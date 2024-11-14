@@ -12749,6 +12749,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3207027510008577986, guid: db15030da559a7f49adcfd709fb59f45, type: 3}
   m_PrefabInstance: {fileID: 644521558}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &645339945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2453189496522699215, guid: c35d82ba13a25164fbb6064abb639749, type: 3}
+  m_PrefabInstance: {fileID: 1514036705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6b374b2c34a3343991ecf8354d4227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &646374518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38823,6 +38834,10 @@ PrefabInstance:
       propertyPath: isPaused
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4161542394026062134, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 645339945}
     - target: {fileID: 4161542394026062134, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
       propertyPath: victoryMenu
       value: 

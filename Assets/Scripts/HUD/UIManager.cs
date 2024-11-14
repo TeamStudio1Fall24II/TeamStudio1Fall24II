@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
      public Player Player;
+     public GameManager GameManager;
 
      public HealthBar healthBar;
      public Image StamFill;
@@ -21,7 +22,7 @@ public class UIManager : MonoBehaviour
           Player.PlayerDeathEvent += OnPlayerDeath;
           Player.PlayerStaminaChangeEvent += OnPlayerStaminaChange;
           Player.m_Controller.StartPressed += OnStartPressed;
-          Player.VictoryEvent += OnVictory;
+          GameManager.VictoryEvent += OnVictory;
      }
 
      private void OnDisable()
@@ -31,7 +32,7 @@ public class UIManager : MonoBehaviour
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
           Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
           Player.m_Controller.StartPressed -= OnStartPressed;
-          Player.VictoryEvent += OnVictory;
+          GameManager.VictoryEvent += OnVictory;
     }
 
      private void Start()
