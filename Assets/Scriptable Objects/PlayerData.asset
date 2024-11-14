@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402630d0d3bb6654aaec4597dd700aa5, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 90
   maxStam: 100
-  RunCost: 10
-  StamChargeRate: 1
+  RunCost: 25
+  StamChargeRate: 10
   HealthChargeRate: 1

@@ -10,6 +10,7 @@ public class CompletionZone : MonoBehaviour
           if(other.CompareTag("Player"))
           {
                PlayerEnteredCompletionZone?.Invoke();
+               //OpenVictoryMenu();
           }
      }
 }
