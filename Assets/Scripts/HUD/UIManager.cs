@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
      private void Awake()
      {
           Player.PlayerHealthChangeEvent += OnPlayerHealthChange;
+          Player.PlayerDeathEvent += OnPlayerDeath;
           Player.PlayerStaminaChangeEvent += OnPlayerStaminaChange;
           Player.m_Controller.StartPressed += OnStartPressed;
      }
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
      private void OnDisable()
      {
           Player.PlayerHealthChangeEvent -= OnPlayerHealthChange;
+          Player.PlayerDeathEvent -= OnPlayerDeath;
           Player.PlayerStaminaChangeEvent -= OnPlayerStaminaChange;
           Player.m_Controller.launcher.AmmoChangeEvent -= OnAmmoChange;
           Player.m_Controller.StartPressed -= OnStartPressed;
@@ -53,5 +55,10 @@ public class UIManager : MonoBehaviour
      private void OnStartPressed()
      {
           pauseMenu.TogglePause();
+     }
+
+     private void OnPlayerDeath()
+     {
+          deathMenu.OpenDeathMenu();
      }
 }

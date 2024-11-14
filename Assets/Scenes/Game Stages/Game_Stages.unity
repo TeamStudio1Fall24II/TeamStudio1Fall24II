@@ -11569,17 +11569,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3207027510008577986, guid: db15030da559a7f49adcfd709fb59f45, type: 3}
   m_PrefabInstance: {fileID: 589209931}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &592453632 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5356584593915900279, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
-  m_PrefabInstance: {fileID: 1875388829}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a905ac76b708d47918fe5b1779dc77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &594956352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38018,18 +38007,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3334631451415721411, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 442530336}
     - target: {fileID: 4161542394026062134, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 442530336}
-    - target: {fileID: 4161542394026062134, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
-      propertyPath: deathMenu
-      value: 
-      objectReference: {fileID: 592453632}
-    - target: {fileID: 4161542394026062134, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 1918291826}
     - target: {fileID: 4432261489630907069, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
       propertyPath: player
       value: 
@@ -38085,10 +38070,6 @@ PrefabInstance:
     - target: {fileID: 6791784930399663276, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7762206712168604935, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
-      propertyPath: m_Name
-      value: PauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8028092118181528986, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
       propertyPath: cam
@@ -38595,17 +38576,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3207027510008577986, guid: db15030da559a7f49adcfd709fb59f45, type: 3}
   m_PrefabInstance: {fileID: 1907985069}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1918291826 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4432261489630907069, guid: cfd9946376efe4847aaefdc4d63c5b5e, type: 3}
-  m_PrefabInstance: {fileID: 1875388829}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c940516de94adb645b65e62dfc68304b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1929980771
 PrefabInstance:
   m_ObjectHideFlags: 0
