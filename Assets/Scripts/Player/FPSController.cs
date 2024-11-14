@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
-
 
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
@@ -14,6 +14,10 @@ public class FPSController : MonoBehaviour
      private InputAction fireAction;
      private InputAction interactAction;
      private InputAction reloadAction;
+
+     // TODO: Look into making a UIController to separate out UI action inputs
+     // TODO: Need a gamepad navigation for UI buttons
+     private InputAction startButtonAction;
      #endregion
 
      public Camera playerCamera;
@@ -26,6 +30,8 @@ public class FPSController : MonoBehaviour
      public float lookXLimit = 45f;
 
      public bool isRunning;
+
+     public UnityAction StartPressed;
 
      private CharacterController characterController;
      public ProjectileLauncher launcher;
@@ -42,6 +48,8 @@ public class FPSController : MonoBehaviour
      [HideInInspector]
      public bool canFire = true;
      public bool canSprint = true;
+
+     public bool disableControls = false;
 
      private void Awake()
      {
@@ -74,6 +82,10 @@ public class FPSController : MonoBehaviour
           reloadAction = playerControls.Player.Reload;
           reloadAction.Enable();
           reloadAction.performed += Reload;
+
+          startButtonAction = playerControls.Player.Pause;
+          startButtonAction.Enable();
+          startButtonAction.performed += Pause;
      }
 
      private void OnDisable()
@@ -85,6 +97,7 @@ public class FPSController : MonoBehaviour
           fireAction.Disable();
           interactAction.Disable();
           reloadAction.Disable();
+          startButtonAction.Disable();
      }
 
      void Start()
@@ -103,6 +116,8 @@ public class FPSController : MonoBehaviour
 
      private void HandleMovement()
      {
+          if(disableControls) { return; }
+
           inputDirection = moveAction.ReadValue<Vector2>();
           Vector3 forward = transform.TransformDirection(Vector3.forward);
           Vector3 right = transform.TransformDirection(Vector3.right);
@@ -121,6 +136,8 @@ public class FPSController : MonoBehaviour
 
      private void HandleRotation()
      {
+          if (disableControls) { return; }
+
           if (canMove)
           {
                inputRotation = rotateAction.ReadValue<Vector2>();
@@ -133,6 +150,8 @@ public class FPSController : MonoBehaviour
 
      private void Jump(InputAction.CallbackContext context)
      {
+          if (disableControls) { return; }
+
           if (canMove && characterController.isGrounded)
           {
                moveDirection.y = jumpPower;
@@ -141,7 +160,9 @@ public class FPSController : MonoBehaviour
 
      private void Fire(InputAction.CallbackContext context)
      {
-          if(canFire)
+          if (disableControls) { return; }
+
+          if (canFire)
           {
                launcher.Launch();
           }
@@ -149,12 +170,20 @@ public class FPSController : MonoBehaviour
 
      private void Interact(InputAction.CallbackContext context)
      {
+          if (disableControls) { return; }
+
           interactionProbe.Interact();
      }
 
      private void Reload(InputAction.CallbackContext context)
      {
+          if (disableControls) { return; }
+
           launcher.StartReloadIterative();
+     }
+     private void Pause(InputAction.CallbackContext context)
+     {
+          StartPressed?.Invoke();
      }
 
      private void GravityTick()
@@ -164,4 +193,6 @@ public class FPSController : MonoBehaviour
                moveDirection.y -= gravity * Time.deltaTime;
           }
      }
+
+
 }
