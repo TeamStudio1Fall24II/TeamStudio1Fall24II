@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
-  m_Name: ElevatorOpen
+  m_Name: Reloaded
   m_EditorClassIdentifier: 
-  type: 11
+  type: 15
   clips:
-  - {fileID: 8300000, guid: d9cbe3a8b0e2c2c4789ce02adf17ba84, type: 3}
+  - {fileID: 8300000, guid: 7e6249e39db308048ae0c17d45903d26, type: 3}
   outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
   baseVolume: 1
   volumeModPercent: 0.1
   basePitch: 1
-  pitchModPercent: 0.05
+  pitchModPercent: 0.1

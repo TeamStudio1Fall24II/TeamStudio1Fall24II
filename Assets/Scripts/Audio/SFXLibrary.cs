@@ -5,7 +5,7 @@ using UnityEngine;
 public static class SFXLibrary
 {                                     
     //only add new sound tags to the end of the list to avoid index swoopling around
-    public enum SFXType { Default, Footstep, Wood, Keyboard, KeyImpact, Mouse, Monitor, DoorClose, DoorOpen, UI_Click, Thunder, ElevatorOpen, ElevatorClose}
+    public enum SFXType { Default, Footstep, Wood, Keyboard, KeyImpact, Mouse, Monitor, DoorClose, DoorOpen, UI_Click, Thunder, ElevatorOpen, ElevatorClose, Empty, Reloading, Reloaded}
 
     public static Dictionary<SFXType, SFXSO> sfxDictionary = new Dictionary<SFXType, SFXSO>();
 

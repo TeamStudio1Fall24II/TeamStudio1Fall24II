@@ -16,6 +16,7 @@ public class ProjectileLauncher : MonoBehaviour
      public bool canFire = true;
 
      public UnityAction AmmoChangeEvent;
+     public UnityAction CannotFireEvent;
 
      private void Start()
      {
@@ -25,7 +26,11 @@ public class ProjectileLauncher : MonoBehaviour
 
      public void Launch()
      {
-          if(!canFire) { return; }
+          if(!canFire) 
+          {
+               CannotFireEvent?.Invoke();
+               return; 
+          }
 
           Vector3 spawnPosition = ProjectileSpawnPoint.transform.position + ProjectileSpawnPoint.transform.forward * ProjectileSpawnDistance;
           GameObject projectileObj =  Instantiate(Projectile, spawnPosition, transform.rotation);
