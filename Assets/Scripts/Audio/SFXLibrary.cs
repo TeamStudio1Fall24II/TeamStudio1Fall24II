@@ -1,16 +1,15 @@
-using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 
 public static class SFXLibrary
-{                                                                                                                                                                                                                       
-    public enum SFXType { Default, Footstep, Wood, Keyboard, Mouse, Monitor, DoorClose, DoorOpen, UI_Click}
+{                                     
+    //only add new sound tags to the end of the list to avoid index swoopling around
+    public enum SFXType { Default, Footstep, Wood, Keyboard, KeyImpact, Mouse, Monitor, DoorClose, DoorOpen, UI_Click, Thunder, ElevatorOpen, ElevatorClose, Empty, Reloading, Reloaded}
 
     public static Dictionary<SFXType, SFXSO> sfxDictionary = new Dictionary<SFXType, SFXSO>();
 
-    public static void PlaySound(SFXType type, Vector3 location, AudioSource audioSource)
+    public static SFXSO GetSound(SFXType type)
     {
         if (sfxDictionary.Count == 0) 
         {
@@ -28,30 +27,15 @@ public static class SFXLibrary
                     Debug.Log(s.type + " is already a key in SFX Dictionary");
                 }
             }
+            Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
         }
-        Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
+
 
         if (sfxDictionary.ContainsKey(type))
         {
-            if (audioSource == null)
-            {
-                //make one
-                AudioSource a = GameObject.Instantiate(audioSource) as AudioSource;
-                a.transform.position = location;
-                a.clip = sfxDictionary[type].GetClip();
-                a.volume = sfxDictionary[type].GetVolume();
-                a.pitch = sfxDictionary[type].GetPitch();
-                a.Play();
-                GameObject.Destroy(a.gameObject, a.clip.length +1f);
-            }
-            else
-            {
-                audioSource.clip = sfxDictionary[type].GetClip();
-                audioSource.volume = sfxDictionary[type].GetVolume();
-                audioSource.pitch = sfxDictionary[type].GetPitch();
-                audioSource.Play();
-            }
+            return sfxDictionary[type];
         }
+        else return sfxDictionary[SFXType.Default];
     }
     
 }

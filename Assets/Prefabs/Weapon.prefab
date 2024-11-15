@@ -229,6 +229,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7070548318208500201}
   - component: {fileID: 1597237297589125474}
+  - component: {fileID: 3121601756646700092}
+  - component: {fileID: 8126324898414494485}
+  - component: {fileID: 1856256013506355346}
+  - component: {fileID: 3257054451212758876}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -270,7 +274,71 @@ MonoBehaviour:
   ProjectileSpeed: 30
   ProjectileSpawnDistance: 0.2
   MaxAmmo: 12
+  reloadTime: 2.5
+  reloadTimePerBullet: 0.2
   canFire: 1
+--- !u!114 &3121601756646700092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086615211974756124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c40d280d65d384fa462aee16b321b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wp: {fileID: 1597237297589125474}
+  reloading: {fileID: 8126324898414494485}
+  reloaded: {fileID: 1856256013506355346}
+  cannotFire: {fileID: 3257054451212758876}
+  previous: 0
+--- !u!114 &8126324898414494485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086615211974756124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a4e148c71cc9442b4b2481079aedd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: 14
+  myAudioSource: {fileID: 0}
+  playOnAwake: 0
+--- !u!114 &1856256013506355346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086615211974756124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a4e148c71cc9442b4b2481079aedd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: 15
+  myAudioSource: {fileID: 0}
+  playOnAwake: 0
+--- !u!114 &3257054451212758876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086615211974756124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a4e148c71cc9442b4b2481079aedd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: 13
+  myAudioSource: {fileID: 0}
+  playOnAwake: 0
 --- !u!1001 &3256027193222331560
 PrefabInstance:
   m_ObjectHideFlags: 0

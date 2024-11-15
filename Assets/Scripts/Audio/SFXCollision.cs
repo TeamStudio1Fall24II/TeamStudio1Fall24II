@@ -15,10 +15,10 @@ public class SFXCollision : SFXMaker
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision" + collision.collider.gameObject.name);
+        //Debug.Log("Collision" + collision.collider.gameObject.name);
         if(cooldownTimer <= 0) 
         {
-            base.MakeSound();
+            base.MakeSound(out float clipLength);
             cooldownTimer = cooldown;
         }
     }
