@@ -1300,6 +1300,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9011808105590232823, guid: 17ed885b24e63a041bba09baf76ac096, type: 3}
+      propertyPath: m_text
+      value: 'One Last Job:
+
+        Rains of Retirement'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011808105590232823, guid: 17ed885b24e63a041bba09baf76ac096, type: 3}
+      propertyPath: m_fontSize
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011808105590232823, guid: 17ed885b24e63a041bba09baf76ac096, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
