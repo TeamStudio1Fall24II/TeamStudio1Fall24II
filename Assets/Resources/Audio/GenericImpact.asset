@@ -15,6 +15,7 @@ MonoBehaviour:
   type: 0
   clips:
   - {fileID: 8300000, guid: f1dacb0063b50bb43bb865a9b6badd1c, type: 3}
+  outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
   baseVolume: 1
   volumeModPercent: 0.113
   basePitch: 1.7

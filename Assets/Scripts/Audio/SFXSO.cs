@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [CreateAssetMenu(fileName = "SFX", menuName = "Audio Data")]
 [Serializable]
@@ -8,6 +9,7 @@ public class SFXSO : ScriptableObject
 {
     [SerializeField] internal SFXLibrary.SFXType type;
     [SerializeField] List<AudioClip> clips;
+    [SerializeField] AudioMixerGroup outputMixerGroup;
 
     [Header("Volume")]
     [SerializeField][Range(0f, 1f)] float baseVolume = 1.0f;
@@ -17,7 +19,10 @@ public class SFXSO : ScriptableObject
     [SerializeField][Range(0f, 3f)] float basePitch = 1.0f;
     [SerializeField][Range(0f, 1f)] float pitchModPercent = .1f;
 
-
+    public AudioMixerGroup GetAudioGroup()
+    {
+        return outputMixerGroup;
+    }
 
     public float GetVolume()
     {

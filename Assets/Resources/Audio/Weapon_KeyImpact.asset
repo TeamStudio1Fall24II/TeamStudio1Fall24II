@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
+  m_Name: Weapon_KeyImpact
+  m_EditorClassIdentifier: 
+  type: 4
+  clips:
+  - {fileID: 8300000, guid: f3b5c31600e959c409f9099ee29fe1a8, type: 3}
+  - {fileID: 8300000, guid: a24fc417feed89746b6a7a3b4ae79aba, type: 3}
+  - {fileID: 8300000, guid: 2f502727552100140b75074faea62478, type: 3}
+  - {fileID: 8300000, guid: 82068ce0c46c4fe4eb67b90de63be096, type: 3}
+  - {fileID: 8300000, guid: 071a76f2b1057f3498b8e77ef6c9a4ec, type: 3}
+  - {fileID: 8300000, guid: c75fbe320c02dc5428f70067ac86f04f, type: 3}
+  - {fileID: 8300000, guid: 975514b13899a6743acb8be6263a42f5, type: 3}
+  - {fileID: 8300000, guid: e4091643172daf2409da4da8464e27dd, type: 3}
+  outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
+  baseVolume: 0.619
+  volumeModPercent: 0.1
+  basePitch: 1
+  pitchModPercent: 0.1

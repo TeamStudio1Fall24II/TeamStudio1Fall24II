@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7383564961951465284}
   - component: {fileID: 7690334358568892590}
   - component: {fileID: 7623283920990481672}
+  - component: {fileID: 8032725714974884390}
+  - component: {fileID: 5261460526314375650}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -151,3 +153,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &8032725714974884390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809766540197836070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a4e148c71cc9442b4b2481079aedd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: 3
+  myAudioSource: {fileID: 0}
+  playOnAwake: 1
+--- !u!114 &5261460526314375650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809766540197836070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088874e255571f8448deac269c953a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: 4
+  myAudioSource: {fileID: 0}
+  playOnAwake: 0
+  cooldown: 0.25

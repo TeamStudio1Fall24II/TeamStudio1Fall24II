@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
+  m_Name: Monitor
+  m_EditorClassIdentifier: 
+  type: 6
+  clips:
+  - {fileID: 8300000, guid: 8f6706200efd8d14db1dde35a4fc38ca, type: 3}
+  - {fileID: 8300000, guid: fd40bb6d54d42844289492daf04334f9, type: 3}
+  - {fileID: 8300000, guid: a22180b57e5ff7c4c89ee03c7b706cca, type: 3}
+  - {fileID: 8300000, guid: 05949c1f11835ef4db0d4d499c9e2947, type: 3}
+  - {fileID: 8300000, guid: 6641001ca0a4f2940a189821254de683, type: 3}
+  - {fileID: 8300000, guid: b3ff8ac682f617442a720662e8a467d6, type: 3}
+  outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
+  baseVolume: 1
+  volumeModPercent: 0.1
+  basePitch: 1
+  pitchModPercent: 0.1
