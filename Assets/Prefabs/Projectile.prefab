@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1975889470652972415}
   - component: {fileID: 7620320413915489553}
   - component: {fileID: 1662305034098997639}
-  - component: {fileID: 7383564961951465284}
   - component: {fileID: 7690334358568892590}
   - component: {fileID: 7623283920990481672}
   - component: {fileID: 8032725714974884390}
   - component: {fileID: 5261460526314375650}
+  - component: {fileID: 2111495196932062303}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,27 +91,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7383564961951465284
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2809766540197836070}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.05
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7690334358568892590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +163,24 @@ MonoBehaviour:
   myAudioSource: {fileID: 0}
   playOnAwake: 0
   cooldown: 0.25
+--- !u!65 &2111495196932062303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809766540197836070}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020825498, y: 0.0076486613, z: 0.020825516}
+  m_Center: {x: 0, y: -2.3283064e-10, z: 0}

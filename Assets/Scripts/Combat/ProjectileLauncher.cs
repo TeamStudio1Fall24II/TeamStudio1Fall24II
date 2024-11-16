@@ -34,7 +34,10 @@ public class ProjectileLauncher : MonoBehaviour
 
           Vector3 spawnPosition = ProjectileSpawnPoint.transform.position + ProjectileSpawnPoint.transform.forward * ProjectileSpawnDistance;
           GameObject projectileObj =  Instantiate(Projectile, spawnPosition, transform.rotation);
-          projectileObj.GetComponent<Rigidbody>().linearVelocity = projectileObj.transform.forward * ProjectileSpeed;
+          Rigidbody rb = projectileObj.GetComponent<Rigidbody>();
+          rb.linearVelocity = projectileObj.transform.forward * ProjectileSpeed;
+          Vector3 randomAngularVelocity = Random.insideUnitSphere * 50f; 
+          rb.angularVelocity = randomAngularVelocity;
 
           CurrentAmmo -= 1;
           AmmoChangeEvent?.Invoke();
