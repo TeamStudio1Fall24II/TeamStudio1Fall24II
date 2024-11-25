@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4834576474243532874}
   - component: {fileID: 8472429541306902087}
   - component: {fileID: 6108406473338627944}
+  - component: {fileID: 42213860064116213}
   m_Layer: 8
   m_Name: LevelCompletionElevator
   m_TagString: Untagged
@@ -73,6 +74,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.36277056, y: 0.5691285, z: 0.40631485}
   m_Center: {x: 2.1586149, y: 1.1211411, z: -0.05680275}
+--- !u!64 &42213860064116213
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127731178785216981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3672526269547740734
 GameObject:
   m_ObjectHideFlags: 0
