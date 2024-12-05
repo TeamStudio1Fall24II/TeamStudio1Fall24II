@@ -134,15 +134,15 @@ Material:
     - _GroundNoise_1: 0.24
     - _GroundNormalStrength: 0.01
     - _GroundRippleStrength: 0.875
-    - _GroundSmoothness: 1.25
+    - _GroundSmoothness: 0.25
     - _GroundTile: 22.94
-    - _GroundWetness: 1
+    - _GroundWetness: 0.822
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _PuddleHeight: 0.3
     - _PuddleStrength: 0
-    - _PuddleTile: 5.13
+    - _PuddleTile: 5.57
     - _PuddleTransparency: 0
     - _PuddleWetness: 0.3
     - _QueueControl: 0
@@ -164,7 +164,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.6528301, g: 0.623141, b: 0.5752296, a: 0}
+    - _GroundColor: {r: 0.44555, g: 0.67, b: 0.6550367, a: 1}
     - _PuddleOffset: {r: 0, g: 0, b: 0, a: 0}
     - _PuddleTint: {r: 0.39218938, g: 0.39693263, b: 0.4867924, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
