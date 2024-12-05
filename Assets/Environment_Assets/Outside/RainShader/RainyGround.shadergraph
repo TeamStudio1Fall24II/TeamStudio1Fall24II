@@ -4281,7 +4281,7 @@
     "m_Title": "Placeholder Ground Texture and Normals",
     "m_Position": {
         "x": -3276.7998046875,
-        "y": -948.7999877929688
+        "y": -948.800048828125
     }
 }
 
@@ -11496,7 +11496,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "eb0f791464b640e4915ca5113881b597",
     "m_Id": 0,
-    "m_DisplayName": "Color",
+    "m_DisplayName": "PuddleTint",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
