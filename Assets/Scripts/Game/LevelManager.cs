@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
      public CompletionZone LevelCompletionZone;
      public Transform StartPoint;
 
-     public float UnlockStartDoorDelay = 1.0f;
+     public float UnlockStartDoorDelay = 3.0f;
 
      private void Awake()
      {
