@@ -10,8 +10,13 @@ public class SFXInterval : SFXMaker
     {
         if (internalTimer <= 0f)
         {
-            base.MakeSound(out float clipLength);
-            internalTimer = clipLength + Random.Range(intervalRange.x, intervalRange.y);
+            try
+            {
+                base.MakeSound(out float clipLength);
+                internalTimer = clipLength + Random.Range(intervalRange.x, intervalRange.y);
+            }
+            catch { }
+
         }
         else
         {
