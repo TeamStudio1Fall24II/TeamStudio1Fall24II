@@ -24,10 +24,10 @@ public static class SFXLibrary
                 }
                 else
                 {
-                    Debug.Log(s.type + " is already a key in SFX Dictionary");
+                    //Debug.Log(s.type + " is already a key in SFX Dictionary");
                 }
             }
-            Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
+            //Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
         }
 
 

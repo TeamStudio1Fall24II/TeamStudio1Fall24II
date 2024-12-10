@@ -20,6 +20,15 @@ public class SFXWeaponSlot : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        if (wp != null)
+        {
+            wp.AmmoChangeEvent -= AmmoChanged;
+            wp.CannotFireEvent -= CannotFire;
+        }
+    }
+
     private void AmmoChanged()
     {
         if(!init)

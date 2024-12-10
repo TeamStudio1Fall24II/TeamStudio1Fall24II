@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5e51dcf14c481d949999aeb800d9aba1, type: 3}
   - {fileID: 8300000, guid: 627f3234ee1846743a0ea55e6a8994ff, type: 3}
   - {fileID: 8300000, guid: 78b20de7cae421347917fe77a91aa959, type: 3}
+  outputMixerGroup: {fileID: 5838289446449518522, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
   baseVolume: 1
   volumeModPercent: 0.1
   basePitch: 0.66
