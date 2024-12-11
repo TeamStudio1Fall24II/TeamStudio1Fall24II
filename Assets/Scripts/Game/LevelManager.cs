@@ -23,7 +23,8 @@ public class LevelManager : MonoBehaviour
 
      private void Awake()
      {
-          LevelCompletionZone.PlayerEnteredTriggerZone += OnCompletionZone;
+          if (LevelCompletionZone != null)
+               LevelCompletionZone.PlayerEnteredTriggerZone += OnCompletionZone;
           if(LevelStartZone != null)
                LevelStartZone.PlayerEnteredTriggerZone += OnStartZone;
 
@@ -35,7 +36,8 @@ public class LevelManager : MonoBehaviour
 
      private void OnDestroy()
      {
-          LevelCompletionZone.PlayerEnteredTriggerZone -= OnCompletionZone;
+          if (LevelCompletionZone != null)
+               LevelCompletionZone.PlayerEnteredTriggerZone -= OnCompletionZone;
           if (LevelStartZone != null)
                LevelStartZone.PlayerEnteredTriggerZone -= OnStartZone;
           foreach (GameObject enemyGO in Enemies)
@@ -59,7 +61,8 @@ public class LevelManager : MonoBehaviour
                if (isEnemiesCleared)
                {
                     LevelDoor.isLocked = false;
-                    LevelCompletionZone.gameObject.SetActive(true);
+                    if(LevelCompletionZone != null)
+                         LevelCompletionZone.gameObject.SetActive(true);
                     if(InvisibleBlock!= null)
                          InvisibleBlock?.gameObject.SetActive(false);
                }
@@ -74,7 +77,7 @@ public class LevelManager : MonoBehaviour
                InvisibleBlock?.SetActive(true);
      }
 
-     private void OnCompletionZone()
+     public void OnCompletionZone()
      {
           Debug.Log("Level " + LevelTitle + " Complete!!!");
           LevelCompleteEvent?.Invoke(this);
