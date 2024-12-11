@@ -2,16 +2,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CompletionZone : MonoBehaviour
+public class PlayerTriggerZone : MonoBehaviour
 {
-     public UnityAction PlayerEnteredCompletionZone;
-     public UnityAction PlayerExitedCompletionZone;
+     public UnityAction PlayerEnteredTriggerZone;
+     public UnityAction PlayerExitedTriggerZone;
 
     private void OnTriggerEnter(Collider other)
      {
           if(other.CompareTag("Player"))
           {
-               PlayerEnteredCompletionZone?.Invoke();
+               PlayerEnteredTriggerZone?.Invoke();
           }
      }
 
@@ -19,7 +19,7 @@ public class CompletionZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerExitedCompletionZone?.Invoke();
+            PlayerExitedTriggerZone?.Invoke();
         }
     }
 }

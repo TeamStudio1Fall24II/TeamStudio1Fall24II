@@ -14,18 +14,33 @@ public class LevelManager : MonoBehaviour
      public InteractableDoor LevelDoor;
      public InteractableDoor LevelStartDoor;
 
-     public CompletionZone LevelCompletionZone;
+     public PlayerTriggerZone LevelCompletionZone;
+     public PlayerTriggerZone LevelStartZone;
      public Transform StartPoint;
+     public GameObject InvisibleBlock;
 
      public float UnlockStartDoorDelay = 3.0f;
 
      private void Awake()
      {
-          LevelCompletionZone.PlayerEnteredCompletionZone += OnCompletionZone;
+          LevelCompletionZone.PlayerEnteredTriggerZone += OnCompletionZone;
+          if(LevelStartZone != null)
+               LevelStartZone.PlayerEnteredTriggerZone += OnStartZone;
 
-          foreach(GameObject enemyGO in Enemies)
+          foreach (GameObject enemyGO in Enemies)
           {
                enemyGO.GetComponent<EnemyAI>().DeathEvent += RemoveEnemy;
+          }
+     }
+
+     private void OnDestroy()
+     {
+          LevelCompletionZone.PlayerEnteredTriggerZone -= OnCompletionZone;
+          if (LevelStartZone != null)
+               LevelStartZone.PlayerEnteredTriggerZone -= OnStartZone;
+          foreach (GameObject enemyGO in Enemies)
+          {
+               enemyGO.GetComponent<EnemyAI>().DeathEvent -= RemoveEnemy;
           }
      }
      public void AddEnemy(GameObject enemy)
@@ -44,8 +59,19 @@ public class LevelManager : MonoBehaviour
                if (isEnemiesCleared)
                {
                     LevelDoor.isLocked = false;
+                    LevelCompletionZone.gameObject.SetActive(true);
+                    if(InvisibleBlock!= null)
+                         InvisibleBlock?.gameObject.SetActive(false);
                }
           }
+     }
+
+     private void OnStartZone()
+     {
+          LevelStartDoor.ForceInteract();
+          LevelStartZone.gameObject.SetActive(false);
+          if (InvisibleBlock != null)
+               InvisibleBlock?.SetActive(true);
      }
 
      private void OnCompletionZone()
@@ -65,12 +91,12 @@ public class LevelManager : MonoBehaviour
           player.transform.position = StartPoint.position;
           player.transform.Rotate(0, 90, 0);
           player.GetComponent<CharacterController>().enabled = true;
-          StartCoroutine(SlowUnlockDoor(UnlockStartDoorDelay));
+          StartCoroutine(SlowOpenDoor(UnlockStartDoorDelay));
      }
 
-     private IEnumerator SlowUnlockDoor(float seconds)
+     private IEnumerator SlowOpenDoor(float seconds)
      {
           yield return new WaitForSeconds(seconds);
-          LevelStartDoor.isLocked = false;
+          LevelStartDoor.ForceInteract();
      }
 }

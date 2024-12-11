@@ -13,15 +13,15 @@ public class MusicController : MonoBehaviour
     [SerializeField] public bool inElevator = false;
     [SerializeField] public bool onFirstFloor = false;
 
-    [SerializeField] CompletionZone completionZone1 = null;
-    [SerializeField] CompletionZone completionZone2 = null;
-    [SerializeField] CompletionZone completionZone3 = null;
+    [SerializeField] PlayerTriggerZone completionZone1 = null;
+    [SerializeField] PlayerTriggerZone completionZone2 = null;
+    [SerializeField] PlayerTriggerZone completionZone3 = null;
 
     Coroutine lobbyRoutine = null;
     Coroutine elevatorRoutine = null;
     private void Awake()
     {
-        foreach (CompletionZone c in GameObject.FindObjectsOfType<CompletionZone>())//FindObjectsByType(typeof(CompletionZone), FindObjectsSortMode.None))
+        foreach (PlayerTriggerZone c in GameObject.FindObjectsOfType<PlayerTriggerZone>())//FindObjectsByType(typeof(CompletionZone), FindObjectsSortMode.None))
         {
             if(c.name == "LevelCompletionZone")
             {
@@ -38,20 +38,20 @@ public class MusicController : MonoBehaviour
     {
         if(completionZone1 != null)
         {
-            completionZone1.PlayerEnteredCompletionZone += InElevator;
-            completionZone1.PlayerExitedCompletionZone += LeavingElevator;
-            completionZone1.PlayerEnteredCompletionZone += LeaveFirstFloor;
+            completionZone1.PlayerEnteredTriggerZone += InElevator;
+            completionZone1.PlayerExitedTriggerZone += LeavingElevator;
+            completionZone1.PlayerEnteredTriggerZone += LeaveFirstFloor;
         }
 
         if(completionZone2 != null)
         {
-            completionZone2.PlayerEnteredCompletionZone += InElevator;
-            completionZone2.PlayerExitedCompletionZone += LeavingElevator;
+            completionZone2.PlayerEnteredTriggerZone += InElevator;
+            completionZone2.PlayerExitedTriggerZone += LeavingElevator;
         }
 
         if (completionZone3 != null)
         {
-            completionZone3.PlayerEnteredCompletionZone += EndGame;
+            completionZone3.PlayerEnteredTriggerZone += EndGame;
         }
 
 
@@ -62,19 +62,19 @@ public class MusicController : MonoBehaviour
     {
         if (completionZone3 != null)
         {
-            completionZone3.PlayerEnteredCompletionZone -= EndGame;
+            completionZone3.PlayerEnteredTriggerZone -= EndGame;
         }
 
         if (completionZone2 != null)
         {
-            completionZone2.PlayerEnteredCompletionZone -= InElevator;
-            completionZone2.PlayerExitedCompletionZone -= LeavingElevator;
+            completionZone2.PlayerEnteredTriggerZone -= InElevator;
+            completionZone2.PlayerExitedTriggerZone -= LeavingElevator;
         }
 
         if (completionZone1 != null)
         {
-            completionZone1.PlayerEnteredCompletionZone -= InElevator;
-            completionZone1.PlayerExitedCompletionZone -= LeavingElevator;
+            completionZone1.PlayerEnteredTriggerZone -= InElevator;
+            completionZone1.PlayerExitedTriggerZone -= LeavingElevator;
         }
     }
 

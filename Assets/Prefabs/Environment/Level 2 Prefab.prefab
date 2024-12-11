@@ -298,12 +298,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7636081167651091424}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: 1.21}
-  m_LocalScale: {x: 1.1296802, y: 2.4169817, z: 0.3848783}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.4117646, y: 1.1533413, z: 20.72}
+  m_LocalScale: {x: 1.6688938, y: 2.397688, z: 0.6155779}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3944751921604703264}
+  m_Father: {fileID: 5182259526542509774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1165450860314188087
 MeshFilter:
@@ -438,6 +438,7 @@ MonoBehaviour:
   LevelDoor: {fileID: 1142225509455146130}
   LevelStartDoor: {fileID: 8172016690600863939}
   LevelCompletionZone: {fileID: 5846761971270534483}
+  LevelStartZone: {fileID: 0}
   StartPoint: {fileID: 2013277797043801842}
   UnlockStartDoorDelay: 1
 --- !u!1001 &91197818736130348
@@ -617,6 +618,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4834576474243532874, guid: e544c2637959a054a93254972fa4e1ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2013277797043801842}
+    - targetCorrespondingSourceObject: {fileID: 4834576474243532874, guid: e544c2637959a054a93254972fa4e1ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3955440786459402747}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e544c2637959a054a93254972fa4e1ae, type: 3}
 --- !u!4 &5182259526542509774 stripped
@@ -37446,9 +37450,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5174885441337545956, guid: bfd1470e29be4ed4dbad63bf171892fb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3955440786459402747}
     - targetCorrespondingSourceObject: {fileID: 5174885441337545956, guid: bfd1470e29be4ed4dbad63bf171892fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8341912430342715785}

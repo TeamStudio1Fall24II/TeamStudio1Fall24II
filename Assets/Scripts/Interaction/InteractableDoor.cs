@@ -16,6 +16,11 @@ public class InteractableDoor : MonoBehaviour, IInteractable
           HighlightedObject.GetComponent<Renderer>().material = HighlightMat;
      }
 
+     public void ForceInteract()
+     {
+          animator.SetTrigger("Interacted");
+     }
+
      public void Interact()
      {
           if (isLocked) return;
