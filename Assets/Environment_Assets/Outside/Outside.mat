@@ -94,7 +94,7 @@ Material:
     - _BlendOp: 0
     - _BumpScale: 1
     - _CityDarkness: -3.55
-    - _CityLightsAlpha: 0.68
+    - _CityLightsAlpha: 1
     - _CityLightsIntensity: 8
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
