@@ -164,7 +164,7 @@ public class FPSController : MonoBehaviour
 
           if (canFire)
           {
-               launcher.Launch();
+               launcher.Launch(true);
           }
      }
 

@@ -63,6 +63,7 @@ public class LevelManager : MonoBehaviour
           GameObject player = GameObject.Find("Player");
           player.GetComponent<CharacterController>().enabled = false;
           player.transform.position = StartPoint.position;
+          player.transform.Rotate(0, 90, 0);
           player.GetComponent<CharacterController>().enabled = true;
           StartCoroutine(SlowUnlockDoor(UnlockStartDoorDelay));
      }

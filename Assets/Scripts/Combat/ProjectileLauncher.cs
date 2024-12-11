@@ -24,7 +24,7 @@ public class ProjectileLauncher : MonoBehaviour
           AmmoChangeEvent?.Invoke();
      }
 
-     public void Launch()
+     public void Launch(bool playerShot = false)
      {
           if(!canFire) 
           {
@@ -34,6 +34,10 @@ public class ProjectileLauncher : MonoBehaviour
 
           Vector3 spawnPosition = ProjectileSpawnPoint.transform.position + ProjectileSpawnPoint.transform.forward * ProjectileSpawnDistance;
           GameObject projectileObj =  Instantiate(Projectile, spawnPosition, transform.rotation);
+          if(playerShot)
+          {
+               projectileObj.GetComponent<Projectile>().playerShot = true;
+          }
           Rigidbody rb = projectileObj.GetComponent<Rigidbody>();
           rb.linearVelocity = projectileObj.transform.forward * ProjectileSpeed;
           Vector3 randomAngularVelocity = Random.insideUnitSphere * 50f; 
