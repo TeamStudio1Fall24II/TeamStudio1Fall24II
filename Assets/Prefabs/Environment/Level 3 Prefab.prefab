@@ -486,7 +486,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 14392
+  m_VersionIndex: 14395
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6936,7 +6936,7 @@ PrefabInstance:
     - target: {fileID: 1418704377390074214, guid: 6a6be3e83e4912241974ca5c700a2782, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 6825bace9c007ac40b7158b306603ec8, type: 2}
+      objectReference: {fileID: 2100000, guid: ec8b6dc7efe03194fb395c3a8424ea18, type: 2}
     - target: {fileID: 2675861612346108177, guid: 6a6be3e83e4912241974ca5c700a2782, type: 3}
       propertyPath: m_Name
       value: Level_3
@@ -6947,7 +6947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5831689756696387330, guid: 6a6be3e83e4912241974ca5c700a2782, type: 3}
       propertyPath: m_VersionIndex
-      value: 14640
+      value: 14643
       objectReference: {fileID: 0}
     - target: {fileID: 5831689756696387330, guid: 6a6be3e83e4912241974ca5c700a2782, type: 3}
       propertyPath: m_Faces.Array.size
@@ -39886,6 +39886,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 26.63
       objectReference: {fileID: 0}
+    - target: {fileID: 5508274861643118487, guid: e544c2637959a054a93254972fa4e1ae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec8b6dc7efe03194fb395c3a8424ea18, type: 2}
     - target: {fileID: 6117509861627581045, guid: e544c2637959a054a93254972fa4e1ae, type: 3}
       propertyPath: m_IsActive
       value: 0

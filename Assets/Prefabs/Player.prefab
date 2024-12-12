@@ -79,6 +79,7 @@ MonoBehaviour:
   canMove: 1
   canFire: 1
   canSprint: 1
+  disableControls: 0
 --- !u!114 &4903962102770674811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
