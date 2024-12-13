@@ -3,6 +3,7 @@ using UnityEngine;
 public class DeathAudio : SFXMaker
 {
     [SerializeField] EnemyAI myEnemy = null;
+    [SerializeField] bool hasDied = false;
 
     private void Start()
     {
@@ -14,9 +15,14 @@ public class DeathAudio : SFXMaker
         myEnemy.DeathEvent -= Die;
     }
 
-    public void Die(GameObject dyer)
+    public void Die(GameObject newlyDeceased)
     {
-        //Debug.Log("Dying");
-        base.MakeSound();
+        if (!hasDied)
+        {
+            hasDied = true;
+            base.MakeSound();
+            //Debug.Log("Dying");
+            myEnemy.DeathEvent -= Die;
+        }
     }
 }

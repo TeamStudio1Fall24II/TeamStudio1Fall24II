@@ -9,14 +9,23 @@ public class PlayerDamageSounds : SFXMaker
     private void Start()
     {
         player.PlayerHealthChangeEvent += PlayerDamage;
+        currentHealth = player.currentHealth;
+    }
+
+    private void OnDisable()
+    {
+        player.PlayerHealthChangeEvent -= PlayerDamage;
     }
 
     public void PlayerDamage()
     {
-        if(player.currentHealth < currentHealth)
+        //Debug.Log("Player Damage: " + "Last hp: " + currentHealth + ", Current hp:" + player.currentHealth);
+        if (player.currentHealth <= 0f) { return; }
+        if (player.currentHealth < currentHealth)
         {
+            //Debug.Log("Player  took   damage");
             base.MakeSound();
-            currentHealth = player.currentHealth;
         }
+        currentHealth = player.currentHealth;
     }
 }

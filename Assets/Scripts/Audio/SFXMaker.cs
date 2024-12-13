@@ -35,7 +35,7 @@ public class SFXMaker : MonoBehaviour
                 AudioClip clip = sound.GetClip();
                 if(clip == null)
                 {
-                    Debug.Log("Clip null: " + soundEffect);
+                    //Debug.Log("Clip null: " + soundEffect);
                 }
                 a.clip = clip;
 
@@ -51,7 +51,7 @@ public class SFXMaker : MonoBehaviour
                 AudioClip clip = sound.GetClip();
                 if (clip == null)
                 {
-                    Debug.Log("Clip null: " + soundEffect);
+                    //Debug.Log("Clip null: " + soundEffect);
                 }
                 myAudioSource.clip = clip;
                 myAudioSource.volume = sound.GetVolume();
