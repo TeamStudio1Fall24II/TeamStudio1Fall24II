@@ -69,6 +69,7 @@ public class MusicController : MonoBehaviour
         {
             completionZone2.PlayerEnteredTriggerZone -= InElevator;
             completionZone2.PlayerExitedTriggerZone -= LeavingElevator;
+            completionZone2.PlayerExitedTriggerZone -= TurnOffRadio;
         }
 
         if (completionZone1 != null)
@@ -101,6 +102,17 @@ public class MusicController : MonoBehaviour
             elevatorRoutine = null;
         }
         elevatorRoutine = StartCoroutine(FadeInRoutine(fadeTime_elevator, elevatorMusic));
+    }
+
+
+    public void TurnOffRadio()
+    {
+        if (lobbyRoutine != null)
+        {
+            StopCoroutine(lobbyRoutine);
+            lobbyRoutine = null;
+        }
+        lobbyRoutine = StartCoroutine(FadeOutRoutine(fadeTime_elevator, elevatorMusic));
     }
 
     public void LeavingElevator()

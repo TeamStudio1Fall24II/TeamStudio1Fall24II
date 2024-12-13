@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
+  m_Name: EnemyDeath
+  m_EditorClassIdentifier: 
+  type: 17
+  clips:
+  - {fileID: 8300000, guid: e068c63ef267f3041a26608a38117d69, type: 3}
+  - {fileID: 8300000, guid: 80b5215de723b894e9ce1ffbc5b942de, type: 3}
+  - {fileID: 8300000, guid: 0465aa24ed73ae04f8c8a5b5f313927b, type: 3}
+  - {fileID: 8300000, guid: b524ad5f033f382489a41e416f619010, type: 3}
+  - {fileID: 8300000, guid: 9fcf5ba5145d0cf4b9716233965c0a14, type: 3}
+  - {fileID: 8300000, guid: 22eaf0c4c12da31449b1e19960f5dbf5, type: 3}
+  - {fileID: 8300000, guid: 69b0a26a2da6cb443a85c525db954e99, type: 3}
+  - {fileID: 8300000, guid: 163c0c17374d4294889dc0c072015d98, type: 3}
+  - {fileID: 8300000, guid: 7a6405438f6f3844d932a07da767aaf9, type: 3}
+  outputMixerGroup: {fileID: 4524699791072340086, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
+  baseVolume: 1
+  volumeModPercent: 0.1
+  basePitch: 1
+  pitchModPercent: 0.1

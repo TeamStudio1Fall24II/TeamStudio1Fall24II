@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c982f72d45a28439da4a7833cf4d3f, type: 3}
-  m_Name: Reloading
+  m_Name: PlayerDamage
   m_EditorClassIdentifier: 
-  type: 14
+  type: 19
   clips:
-  - {fileID: 8300000, guid: 366dacf7a190c994b93bdda9b990301b, type: 3}
-  outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
+  - {fileID: 8300000, guid: 8e4f7fde984e99a4ab0df1a5ed7a7ab3, type: 3}
+  - {fileID: 8300000, guid: b5e53a10d872e4d4facc5c9376ef3f02, type: 3}
+  - {fileID: 8300000, guid: 37443dcc8b2dbc84aaa8a3bdc6437adf, type: 3}
+  - {fileID: 8300000, guid: 05837146a78ef7141a8db08a33698059, type: 3}
+  outputMixerGroup: {fileID: 4524699791072340086, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
   baseVolume: 1
   volumeModPercent: 0.1
   basePitch: 1

@@ -5,7 +5,9 @@ using UnityEngine;
 public static class SFXLibrary
 {                                     
     //only add new sound tags to the end of the list to avoid index swoopling around
-    public enum SFXType { Default, Footstep, Wood, Keyboard, KeyImpact, Mouse, Monitor, DoorClose, DoorOpen, UI_Click, Thunder, ElevatorOpen, ElevatorClose, Empty, Reloading, Reloaded}
+    public enum SFXType { 
+        Default, Footstep, Wood, Keyboard, KeyImpact, Mouse, Monitor, DoorClose, DoorOpen, UI_Click, 
+        Thunder, ElevatorOpen, ElevatorClose, Empty, Reloading, Reloaded, EnemyDamage, EnemyDeath, EnemyDetect, PlayerDamage, PlayerDeath }
 
     public static Dictionary<SFXType, SFXSO> sfxDictionary = new Dictionary<SFXType, SFXSO>();
 
@@ -27,7 +29,7 @@ public static class SFXLibrary
                     //Debug.Log(s.type + " is already a key in SFX Dictionary");
                 }
             }
-            //Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
+            Debug.Log(sfxDictionary.Count + " SFX types loaded into Dictionary");
         }
 
 

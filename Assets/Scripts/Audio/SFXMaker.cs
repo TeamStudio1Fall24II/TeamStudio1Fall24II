@@ -31,7 +31,14 @@ public class SFXMaker : MonoBehaviour
                 AudioSource a = (new GameObject()).AddComponent<AudioSource>();
                 a.name = soundEffect.ToString();
                 a.transform.position = transform.position;
-                a.clip = sound.GetClip();
+
+                AudioClip clip = sound.GetClip();
+                if(clip == null)
+                {
+                    Debug.Log("Clip null: " + soundEffect);
+                }
+                a.clip = clip;
+
                 a.volume = sound.GetVolume();
                 a.pitch = sound.GetPitch();
                 a.outputAudioMixerGroup = sound.GetAudioGroup();
@@ -40,8 +47,13 @@ public class SFXMaker : MonoBehaviour
             }
             else
             {
-                myAudioSource.clip = sound.GetClip();
 
+                AudioClip clip = sound.GetClip();
+                if (clip == null)
+                {
+                    Debug.Log("Clip null: " + soundEffect);
+                }
+                myAudioSource.clip = clip;
                 myAudioSource.volume = sound.GetVolume();
                 myAudioSource.pitch = sound.GetPitch();
                 myAudioSource.Play();
