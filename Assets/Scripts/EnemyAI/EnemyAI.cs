@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class EnemyAI : MonoBehaviour, IDamageable
 {
      public UnityAction<GameObject> DeathEvent;
+     public UnityAction PlayerDetectEvent;
 
      [SerializeField]
      public EnemyDataSO Data;
@@ -123,6 +124,7 @@ public class EnemyAI : MonoBehaviour, IDamageable
                     if (hit.collider.CompareTag("Player"))
                     {
                          isPlayerDetected = true;
+                         PlayerDetectEvent?.Invoke();
                          TransitionToCombat();
                     }
                }
