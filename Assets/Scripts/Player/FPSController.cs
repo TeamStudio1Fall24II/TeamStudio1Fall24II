@@ -33,7 +33,7 @@ public class FPSController : MonoBehaviour
 
      public UnityAction StartPressed;
 
-     private CharacterController characterController;
+     public CharacterController characterController { get; private set; }
      public ProjectileLauncher launcher;
      [SerializeField]
      private InteractionProbe interactionProbe;

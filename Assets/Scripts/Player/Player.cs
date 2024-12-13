@@ -8,10 +8,20 @@ public class Player : MonoBehaviour, IDamageable
      public PlayerData m_PlayerData;
      public int currentHealth { get; private set; }
      public float currentStam { get; private set; }
-     
+
      private Vector3 prevPos = Vector3.zero;
      private Vector3 currPos = Vector3.zero;
      public bool running => m_Controller.isRunning && prevPos != currPos;
+     public Vector3 currentVelcoty => m_Controller.characterController.velocity;
+     public float currentSpeed
+     {
+          get
+          {
+               Vector3 totalVel = m_Controller.characterController.velocity;
+               totalVel.y = 0;
+               return totalVel.magnitude;
+          }
+     }
 
      private Coroutine stamRecharge;
      private Coroutine healthRecharge;
