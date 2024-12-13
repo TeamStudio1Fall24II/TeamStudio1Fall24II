@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 8955183563771182901}
   - component: {fileID: 4987366558346280981}
   - component: {fileID: 489813426775189647}
+  - component: {fileID: 9214840170940705850}
   m_Layer: 0
   m_Name: Enemy_Scanner
   m_TagString: EnemyAI
@@ -439,6 +440,20 @@ MonoBehaviour:
   myAudioSource: {fileID: 8955183563771182901}
   playOnAwake: 0
   myEnemy: {fileID: 5625583848137998492}
+--- !u!114 &9214840170940705850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507880457164937619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82d35d0022d95649bb01c45cc4df461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7643000732909572654}
+  NMA: {fileID: 6207660065753543763}
 --- !u!1001 &4286284478124437439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -568,6 +583,11 @@ AimConstraint:
 --- !u!4 &4391370794351839316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 363cdac4700d15340bff1c8854aff84c, type: 3}
+  m_PrefabInstance: {fileID: 4286284478124437439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7643000732909572654 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 363cdac4700d15340bff1c8854aff84c, type: 3}
   m_PrefabInstance: {fileID: 4286284478124437439}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8006557430667461183
