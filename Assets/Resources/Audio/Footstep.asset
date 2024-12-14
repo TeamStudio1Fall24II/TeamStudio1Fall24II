@@ -15,9 +15,7 @@ MonoBehaviour:
   type: 1
   clips:
   - {fileID: 8300000, guid: 78be557ed978ad848858fc321d775ef0, type: 3}
-  - {fileID: 8300000, guid: e9dc90abf44824846aa750b8d65c6678, type: 3}
   - {fileID: 8300000, guid: b454e3c1e0c888e4a997da757bdb634c, type: 3}
-  - {fileID: 8300000, guid: a75532939c16a36488bf50b499d626a2, type: 3}
   - {fileID: 8300000, guid: 2b603a8b17f72dc429525eb41c24b205, type: 3}
   outputMixerGroup: {fileID: 4071546246833226550, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
   baseVolume: 1

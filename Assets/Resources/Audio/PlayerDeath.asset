@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4a97f42041523ee49b20284c232560a0, type: 3}
   - {fileID: 8300000, guid: 8d069a1b615e04b4a8cc01abc83aea68, type: 3}
   outputMixerGroup: {fileID: 4524699791072340086, guid: faf40226b5f7ddd40a8e1b74109dd924, type: 2}
-  baseVolume: 1
+  baseVolume: 0.664
   volumeModPercent: 0.1
   basePitch: 1
   pitchModPercent: 0.1

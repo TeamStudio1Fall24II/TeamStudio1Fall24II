@@ -13,6 +13,7 @@ public class FootstepInterval : SFXMaker
 
     void Update()
     {
+        if (player.currentHealth <= 0f) { return; }
         speed = player.currentSpeed;
 
         if(speed > 0f)
